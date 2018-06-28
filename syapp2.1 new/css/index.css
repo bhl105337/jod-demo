@@ -1,0 +1,116 @@
+#footer{
+	z-index: -1;
+}
+.search_btn{
+	margin-top: 5px;
+	margin-right: 1rem;
+	height: 35px;
+	width: 35px;
+	background-image: url(../Public/image/sousuo1.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 100;
+}
+
+.header_title{
+	font-size: 18px;
+	line-height: 2.8rem;
+	text-align: center;
+}
+.header_me{
+	margin: 0.4rem;
+	height: 2rem;
+	width: 2rem;
+	background-image: url(../Public/image/header_me.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.mui-bar-tab .mui-tab-item .mui-icon{
+	width: 50px;
+	height: 50px;
+}
+
+.mui-bar-tab .mui-tab-item.mui-active {
+	color: black;
+	/*background-color: rgb(88,206,242);*/
+}
+.mui-bar-tab .mui-tab-item {
+	display: table-cell;
+	overflow: hidden;
+	width: 1%;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #83731c;
+}
+.mui-bar{
+	background-color: white;
+	-webkit-box-shadow: 0 0 0 rgba(0,0,0,.85);
+	 box-shadow: 0 0 0 rgba(0,0,0,.85);
+}
+.icon_game{
+	background-image: url("../Public/image/youxi2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.icon_news{
+	background-image: url("../Public/image/tuijian2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.icon_strategy{
+	background-image: url("../Public/image/gonglue2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.icon_play{
+	background-image: url("../Public/image/haowan2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+
+.icon_me{
+	background-image: url("../Public/image/wode2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+
+.game_active{
+	background-image: url("../Public/image/youxi1.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.news_active{
+	background-image: url("../Public/image/tuijian1.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.play_active{
+	background-image: url("../Public/image/haowan1.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.me_active{
+	background-image: url("../Public/image/wode1.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.strategy_active{
+	background-image: url("../Public/image/gonglue1.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}

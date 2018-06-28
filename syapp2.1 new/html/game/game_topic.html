@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--<link href="../../css/mui.min.css" rel="stylesheet" />-->
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../css/game/game_topic.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+
+				</div>
+				<div class="game_nameHeader">专 题</div>
+
+			</header>
+		</div>
+
+		<div class="game_topics">
+			<div class="game_topicsHead ofh">
+				<div class="game_topicsHeadimg">
+
+				</div>
+				<div class="game_topicsHeadart color_282828">
+
+				</div>
+			</div>
+			<div class="game_topicsContents">
+				<!--<div class="game_topicsContent">
+						<div class="game_topicsContentimg"></div>
+						<div class="game_topicsContentart backgroundColor_white">
+							<div class="ofh">
+								<div class="game_listImg fl"></div>
+								<div class="fl" style="margin-top: 0.6rem;">
+									<div class="font_14 color_282828">孤岛先锋</div>
+									<div class="font_12">
+										<div class="ofh">
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_starScore fl color_green">9.4</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="fr game_listDownload font_14 color_white backgroundColor_green tac">下载</div>
+							</div>
+							<div class="font_14" style="padding-right: 0.8rem;margin-top: 0.8rem;padding-bottom: 0.8rem;">游戏介绍哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或</div>
+						</div>
+				</div>-->
+				
+				<!--<div class="game_topicsContent">
+						<div class="game_topicsContentimg"></div>
+						<div class="game_topicsContentart backgroundColor_white">
+							<div class="ofh">
+								<div class="game_listImg fl"></div>
+								<div class="fl" style="margin-top: 0.6rem;">
+									<div class="font_14 color_282828">孤岛先锋</div>
+									<div class="font_12">
+										<div class="ofh">
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_star fl"></div>
+											<div class="game_recommend_starScore fl color_green">9.4</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="fr game_listDownload font_14 color_white backgroundColor_green tac">下载</div>
+							</div>
+							<div class="font_14" style="padding-right: 0.8rem;margin-top: 0.8rem;padding-bottom: 0.8rem;">游戏介绍哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或</div>
+						</div>
+				</div>-->
+			
+			</div>
+		</div>
+
+	</body>
+	<script src="../../js/game/game_topic.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var page = 0;
+	</script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true,
+			pullRefresh: {
+				container: ".game_topics", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+				up: {
+					height: 50, //可选.默认50.触发上拉加载拖动距离
+					auto: true, //可选,默认false.自动上拉加载一次
+					contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+					contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+					callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+				},
+				down: {
+					style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+					color: '#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+					height: '50px', //可选,默认50px.下拉刷新控件的高度,
+					range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+					offset: '0px', //可选 默认0px,下拉刷新控件的起始位置
+					auto: false, //可选,默认false.首次加载自动上拉刷新一次
+					callback: down //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+				}
+
+			}
+
+		})
+
+		function up() {
+			page++;
+			$.ajax({
+				type: "get",
+				url: config.data + "game/getGameBySubject",
+				async: true,
+				data: {
+					subjectId: subjectId,
+					sys: 2,
+					page: page
+				},
+				success: function(data) {
+					if(data.state) {
+						
+						var g = data.game;
+						var con = '';
+						for(var i = 0; i < g.length; i++) {
+							con +=
+								"<div class='game_topicsContent ofh' data-id='" + g[i].id + "'>" +
+									"<div class='game_topicsContentimg' style='background-image: url(" + config.img + encodeURI(g[i].game_title_img) + ");'></div>" +
+									"<div class='game_topicsContentart backgroundColor_white'>" +
+										"<div class='ofh'>" +
+											"<div class='game_listImg fl' style='background-image: url(" + config.img + encodeURI(g[i].icon) + ");'></div>" +
+											"<div class='fl'>" +
+												"<div class='font_14 color_282828'>" + g[i].game_name + "</div>" +
+												"<div class='font_12'>" +
+													"<div class='ofh  game_recommend_stars'>" +
+														"<div class='game_recommend_star fl'></div>" +
+														"<div class='game_recommend_star fl'></div>" +
+														"<div class='game_recommend_star fl'></div>" +
+														"<div class='game_recommend_star fl'></div>" +
+														"<div class='game_recommend_star fl'></div>" +
+														"<div class='game_recommend_starScore fl color_green'>" + g[i].grade + "</div>" +
+													"</div>" +
+												"</div>" +
+											"</div>" +
+											"<div class='fr game_listDownload font_12 color_white backgroundColor_green tac'>下载</div>" +
+										"</div>" +
+										"<div class='font_12 color_7a7a7a topic_over' style='padding-right: 0.8rem;padding-bottom: 0.8rem;'>" + g[i].game_recommend + "</div>" +
+									"</div>" +
+								"</div>"
+						}
+						$('.game_topicsContents').append(con)
+						$('.game_recommend_stars').each(function() {
+
+							var score = $(this).find('.game_recommend_starScore').eq(0).text()
+							var starNum = Math.round(score)
+
+							if(starNum % 2 == 0) {
+
+								var starFinal = (starNum / 2 - 1);
+								$(this).children('.game_recommend_star').eq(starFinal).addClass('game_list_star_active')
+								$(this).children('.game_recommend_star').eq(starFinal).prevAll('.game_recommend_star').addClass('game_list_star_active')
+							} else {
+								var starFinal = ((starNum - 1) / 2)
+								$(this).children('.game_recommend_star').eq(starFinal).prevAll('.game_recommend_star').addClass('game_list_star_active')
+								$(this).children('.game_recommend_star').eq(starFinal).addClass('game_list_star_half')
+							}
+						})
+						if(g.length < 20) {
+
+							mui('.game_topics').pullRefresh().endPullupToRefresh(true);
+
+						} else {
+
+							mui('.game_topics').pullRefresh().endPullupToRefresh(false);
+
+						}
+					} else {
+
+					}
+				}
+			});
+
+		}
+
+		function down() {
+			window.location.reload();
+			setTimeout(function() {
+				mui('.game_topics').pullRefresh().endPulldown(true);
+			}, 1000);
+		}
+	</script>
+
+</html>

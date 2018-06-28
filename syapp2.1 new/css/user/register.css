@@ -1,0 +1,78 @@
+body{
+	background-color: #fff;
+}
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	font-size: 18px;
+}
+.mui-input-group{
+	padding-top: 0.5rem;
+}
+.mui-input-row {
+	margin: 0 1.375rem;
+	margin-top: 1.125rem;
+	border-radius: 10px;
+}
+.mui-input-row >input{
+	position: relative;
+	height: 2.8125rem;
+	line-height: 2.8125rem;
+	background-color: #E7EAEC;
+	color: #9E9E9E;
+	font-size: 14px;
+	padding-left: 3rem;
+	
+}
+.disabled { pointer-events: none; }
+.mui-input-row >div{
+	width: 1.25rem;
+	height: 1.25rem;
+	position: absolute;
+	top: 50%;
+	margin-top: -0.625rem;
+	left: 1rem;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	z-index: 9;
+}
+.mui-input-row >.get_verification{
+	position: absolute;
+	right: 2rem;
+	width: 5rem;
+	height: 2rem;
+	left: 100%;
+	margin-left: -6rem;
+}
+.mui-input-row >.phone_img{
+	background-image:url(../../Public/image/5EB22736-3960-4554-94D6-FB710AE9F6E3.png);
+}
+.mui-input-row >.locker_img{
+	background-image: url(../../Public/image/B50CCB67-EE30-409A-9D03-12CEBF11FBB6.png);
+}
+.mui-input-row >.verification_img{
+	background-image: url(../../Public/image/BA27C3AE-0993-48B9-83AB-E11E6C03E0AE.png);
+}
+
+.mui-input-group .mui-input-row:after,.mui-input-group:after{
+	height: 0;
+}
+.protocols > .mui-input-row{
+	margin: 2rem 0;
+	margin-bottom: 0;
+}
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+	font-size:38px;
+}
+.mui-checkbox label, .mui-radio label{
+	margin-top: 0.4rem;
+}
+.login{
+	margin: 0 1.375rem;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+    border-radius: 10px;
+}

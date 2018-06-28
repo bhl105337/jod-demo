@@ -1,0 +1,111 @@
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	font-size: 18px;
+}
+.news_post_commentContent{
+	width: 100%;
+	border-top: 1px solid #E7EAEC;
+	
+	margin-top: 45px;
+	border-bottom: 0.75rem solid #e6ebec;
+}
+.news_post_commentContent_head{
+	width: 2.9375rem;
+	height: 2.9375rem;
+	margin-top: 0.9375rem;
+	margin-left: 0.9375rem;
+	margin-right: 0.75rem;
+	border-radius: 50%;
+	/*background-image: url("../../Public/image/yishoucang.png");*/
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.news_post_commentContent_content{
+	margin-top: 1.3125rem;
+	width: 76%;
+	margin-bottom: 1rem;
+}
+.comment_content{
+	margin-top: 0.6rem;
+}
+.comment_info{
+	margin-top: 1.25rem;
+}
+.comment_summary{
+	margin: 0.625rem 0;
+	height: 5rem;
+	line-height: 5rem;
+	margin-right: 0.625rem;
+	background-color: rgb(245,245,245);
+}
+.comment_summary_img{
+	width: 5rem;
+	height: 5rem;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+	
+}
+.comment_summary_art{
+	padding: 0 0.5rem;
+	width: 9rem;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden; 
+}
+.news_allReply{
+	width: 100%;
+	height: 2.625rem;
+	line-height: 2.625rem;
+	padding-left: 0.9375rem;
+}
+
+.news_secondComment{
+	height: 3rem;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: 99;
+	
+}
+.news_secondComment_input,input[type=text]{
+	position: absolute;
+	background-color: #E7EAEC;
+	width: 80%;
+	height: 2rem;
+	left: 1rem;
+	top: 50%;
+	margin-top: -1rem;
+	border-radius: 20px;
+	outline: 0;
+	border: 0;
+	color: #7A7A7A;
+	font-size: 14px;
+}
+input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size: 14px;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   font-size: 14px;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   font-size: 14px;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   font-size: 14px;
+}
+.publish{
+	position: absolute;
+	right: 4%;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	height: 3rem;
+	line-height: 3rem;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../css/user/register.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+
+				</div>
+				<div class="notice">注册账号</div>
+
+			</header>
+		</div>
+
+		<div class="register_content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<div class="phone_img"></div>
+					<input type="tel" class="mui-input-clear" placeholder="请输入手机号" id="register-phone">
+				</div>
+				<div class="mui-input-row">
+					<div class="locker_img"></div>
+					<input type="password" class="mui-input-password" placeholder="请输入密码(英文与数字组合不小于6位)" id="register-password">
+				</div>
+				<div class="mui-input-row">
+					<div class="verification_img"></div>
+					<input type="text" class="" placeholder="请输入验证码" id="register-code">
+					<div class="get_verification color_green" id="register-get">获取验证码</div>
+				</div>
+			</form>
+
+			<div class="protocols">
+				<div class="mui-input-row mui-checkbox mui-left">
+					<label class="font_14">我已经阅读并同意了<span class="color_green protocol">ONE游戏用户协议</span></label>
+					<input name="checkbox1" type="checkbox" id="agree"  data-id='2'>
+				</div>
+			</div>
+			<div class="backgroundColor_green color_white login tac" id="register-button">注 册</div>
+		</div>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="../../js/user/register.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

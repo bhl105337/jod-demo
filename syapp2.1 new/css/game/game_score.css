@@ -1,0 +1,79 @@
+body{
+	background-color: white;
+}
+.add_comment{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+}
+.publish{
+	position: absolute;
+	right: 1rem;
+	
+}
+.score_game{
+	height: 3.625rem;
+	line-height: 3.625rem;
+	position: fixed;
+	top: 45px;
+	width: 100%;
+	border-bottom: 2px solid #E7EAEC;
+}
+.score_gameImg{
+	width: 2.75rem;
+	height: 2.75rem;
+	
+	border-radius: 10px;
+	/*background-image: url("../../Public/image/yishoucang.png");*/
+	/*background-color: red;*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin: 0.4375rem 0.5625rem 0 0.4375rem;
+}
+.stars{
+	margin-top: 1rem;
+	margin-left: 2rem;
+}
+.stars > div{
+	float: left;
+	
+	width: 1.5625rem;
+	height: 1.5625rem;
+	background-image: url("../../Public/image/xing2.png");
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.stars > .staract{
+	background-image: url("../../Public/image/xing1.png");
+}
+.comment_area{
+	margin-top: 6.4375rem;
+	position: fixed;
+	width: 100%;
+
+}
+ textarea{
+ 	resize: none;
+ 	width: 90%;
+ 	
+ 	border: 0;
+ 	/*margin-top: 1.125rem;*/
+ 	margin-left: 1rem;
+ 	padding: 0;
+ 	
+ 	font-size: 16px;
+ 	line-height: 1.6rem;
+ 	font-family: simhei;
+ 	
+ 	overflow: scroll;
+ 	
+ }
+
+#textarea{
+	position: fixed;
+	left: 0;
+	height: 10rem;
+	
+}

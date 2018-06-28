@@ -1,0 +1,182 @@
+body{
+	background-color: rgb(245,245,245);
+	 /*background-image: url(../../Public/image/userhead.png);*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+input{  
+   background:none;  
+   outline:none;  
+   border:0px;  
+}  
+.me_header{
+	
+	width: 100%;
+	height: 10.75rem;
+	padding-top: 3rem;
+	margin: 0 auto;
+	position: relative;
+	background-image:  url(../../Public/image/wobeijing.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.me_headerset,.me_share{
+	position:absolute;
+	top: 1.4rem;
+	right: 1rem;
+	width: 1.6rem;
+	height: 1.6rem;
+	background-image:  url(../../Public/image/shezhi.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.me_share{
+	right: 4rem;
+	background-image:  url(../../Public/image/share.png);
+}
+.me_info{
+	margin: 0 auto;
+	width: 95%;
+	height: 5rem;
+}
+.me_img{
+	 width: 5.5rem;
+    height: 5.5rem;
+    background-image: url(../../Public/image/morentouxiang.png);
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-left: 0.6rem;
+   
+}
+.me_img > div{
+	 margin: 0.7rem auto;
+    width: 4rem;
+    height: 4rem;
+   
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+	
+}
+.me_username{
+	font-size: 18px;
+}
+.me_desc{
+	width: 50%;
+	padding-left: 1.25rem;
+}
+.me_name{
+	width: 100%;
+	padding-top: 1rem;
+}
+.mui-table-view{
+	margin-top: 1rem;
+}
+/*.me_name > input{
+	height: 0.8rem;
+	width: 3rem;
+	margin-left: 1rem;
+	line-height: 0.8rem;
+	border-radius: 10px;
+	background-color: black;
+}*/
+
+/*.me_money > div{
+	width: 5.4rem;
+}*/
+/*.me_input1{
+	background-image: url(../../Public/image/coin.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: 1rem 1rem;
+}
+.me_input2{
+	margin-left: 1rem;
+	background-image: url(../../Public/image/ticket.png);
+	background-repeat:no-repeat;
+	background-position: left;
+	background-size: 1rem 1rem;
+}*/
+/*.me_scorenum{
+	margin-right: 0.6rem;
+}*/
+/*.mui-content>.mui-table-view:first-child{
+	margin-top: 0;
+}
+.mui-grid-view.mui-grid-9{
+	background-color: white;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+	color: rgb(170,170,170);
+}*/
+
+.mui-table-view:before{
+	height: 0;
+}
+.mui-table-view-cell{
+	height: 2.5rem;
+	padding: 0.75rem 0.8125rem;
+	
+}
+.mui-navigate-right >div{
+	width: 1.625rem;
+	height: 1.625rem;
+	font-size: 18px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: -0.2rem;
+	margin-right: 0.875rem;
+}
+.me_money{
+	background-image: url(../../Public/image/zhanghu.png);
+}
+.me_works{
+	background-image: url(../../Public/image/wodezuopin.png);
+}
+
+.me_sign{
+	background-image: url(../../Public/image/qiandao.png);
+}
+.me_draw{
+	background-image: url(../../Public/image/lunpan.png);
+}
+.me_game{
+	background-image: url(../../Public/image/wodeyouxi.png);
+}
+.me_collection{
+	background-image: url(../../Public/image/wodeshoucang.png);
+}
+.me_view{
+	background-image: url(../../Public/image/yijianfankui.png);
+}
+.me_about{
+	background-image: url(../../Public/image/guanyuwomen.png);
+}
+.me_order{
+	background-image: url(../../Public/image/dingdan.png);
+}
+.me_news{
+	background-image: url(../../Public/image/xiaoxizhongxin.png);
+}
+.mui-table-view-cell>a:not(.mui-btn){
+	margin:-0.875rem -0.6rem ;
+}
+/*.mui-navigate-right::before{
+	content: "";
+	width: 26px;
+	height: 26px;
+	left: 10px;
+	background-color: red;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}*/

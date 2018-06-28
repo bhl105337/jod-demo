@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/play/play.css" />
+
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h " id='header'>
+				<div class="me">
+
+				</div>
+				<div class="ui_flex_wide header_title font_bold color_white"></div>
+				<div class="search_btn">
+
+				</div>
+			</header>
+			<div class="one"></div>
+		</div>
+		<div class="list-t-wrap">
+			<div id="refreshContainer" class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="list-wrapper">
+						<!--列表一定要放到容器内,因为会有一个div append到mui-scroll中,需要在底部才能起作用-->
+
+						<div class="h5game">
+							<!--<div class="h5list">
+				<div class="h5img"></div>
+				<div class="h5art">
+					<div class="ofh" style="line-height: 2.875rem;">
+						<div class="h5head fl"></div>
+						<div class="font_14 fl">你胖你先吃</div>
+						<div class="font_12 color_blue fr">进入游戏 >></div>
+					</div>
+					<div class="font_12" style="margin-left: 0.75rem;margin-bottom: 1rem;">这是一场吃货间的战斗!</div>
+				</div>
+			</div>
+			<div class="h5list">
+				<div class="h5img"></div>
+				<div class="h5art">
+					<div class="ofh" style="line-height: 2.875rem;">
+						<div class="h5head fl"></div>
+						<div class="font_14 fl">你胖你先吃</div>
+						<div class="font_12 color_blue fr">进入游戏 >></div>
+					</div>
+					<div class="font_12" style="margin-left: 0.75rem;margin-bottom: 1rem;">这是一场吃货间的战斗!</div>
+				</div>
+			</div>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+		
+		<!--底部模块开始-->
+		<script src="../../js/play/play.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var page = 0;
+			mui.init({
+				swipeBack: true,
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+//					down: {
+//						height: 50, //可选,默认50.触发下拉刷新拖动距离,
+//						auto: true, //可选,默认false.首次加载自动下拉刷新一次
+//						contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+//						contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+//						contentrefresh: "正在刷新...", //可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+//						callback: down //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//					},
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: true, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+			});
+
+			function up() {
+
+				//业务逻辑代码，比如通过ajax从服务器获取新数据；
+				page++;
+				$.ajax({
+					type: "get",
+					url: config.data + "h5/getH5",
+					async: true,
+					data: {
+						page: page
+					},
+					success: function(data) {
+						if(data.state) {
+
+							var h = data.h5;
+
+							var div = "";
+							for(var i = 0; i < h.length; i++) {
+								div +=
+									"<div class='h5list' data-id=" + h[i].id + " data-sort=" + h[i].sort + " data-url='" + h[i].url + "'>" +
+									"<div class='h5img' style='background-image:url(" + config.img + encodeURI(h[i].title_img) + ")'></div>" +
+									"<div class='h5art'>" +
+									"<div class='ofh' style='line-height: 2.875rem;'>" +
+									"<div class='h5head fl' style='background-image:url(" + config.img + encodeURI(h[i].icon) + ")'></div>" +
+									"<div class='font_14 fl'>" + h[i].name + "</div>" +
+									"<div class='font_14 color_blue fr enter' >进入游戏 >></div>" +
+									"</div>" +
+									"<div class='font_12' style='margin-left: 0.75rem;margin-bottom: 1rem;'>" + h[i].commend + "</div>" +
+									"</div>" +
+									"</div>"
+							};
+							$('.h5game').append(div);
+							if(h.length < 5) {
+
+								mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+							} else {
+								mui('#refreshContainer').pullRefresh().endPullupToRefresh(false);
+							}
+							
+
+						} else {
+
+						}
+					}
+				});
+
+				//注意：
+				//1、加载完新数据后，必须执行如下代码，true表示没有更多数据了：
+				//2、若为ajax请求，则需将如下代码放置在处理完ajax响应数据之后
+
+			}
+		
+			
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,67 @@
+.personal_data{
+	margin-top: 3.625rem;
+}
+.me_header{
+	position: relative;
+	width: 4.8125rem;
+	height: 4.8125rem;
+	margin: 0 auto;
+	margin-top: 1.25rem;
+	background-image:  url(../../Public/image/morentouxiang.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.camera{
+	position: absolute;
+	width: 1.75rem;
+	height: 1.75rem;
+	background-image:  url(../../Public/image/xiangji.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	right: 0;
+	bottom: 0;
+}
+input[type=text]{
+	display: block;
+	width: 13rem;
+	margin: 0 auto;
+	margin-top: 2.5625rem;
+	border: 0;
+	border-bottom: 1px solid #9E9E9E;
+	background-color: #E7EAEC;
+	
+}
+.sex_imgs{
+	
+	width: 16rem;
+	margin: 0 auto;
+	margin-top: 3.75rem;
+}
+.sex_imgs > div{
+	width: 4.5rem;
+	height: 4.5rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.man_img{
+	background-image: url(../../Public/image/man.png);
+}
+.woman_img{
+	background-image: url(../../Public/image/woman.png);
+}
+.goTo{
+	position: fixed;
+	bottom: 0;
+	height: 3.125rem;
+	width: 100%;
+	line-height: 3.125rem;
+}
+.man_act{
+	background-image: url(../../Public/image/man_choosed.png);
+}
+.woman_act{
+	background-image: url(../../Public/image/woman_choosed.png);
+}

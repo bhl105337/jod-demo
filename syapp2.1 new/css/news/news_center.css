@@ -1,0 +1,68 @@
+
+.notice_lists{
+	margin-top: 45px;
+	padding-top: 2rem;
+}
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -1rem;
+	font-size: 18px;
+}
+.notice_list{
+	position: relative;
+	padding: 0.625rem;
+	
+	background-color: white;
+	border-bottom: 4px solid #E7EAEC;
+}
+.notice_listImg{
+	
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+/*	background-image: url("../../Public/image/star.png");*/
+	
+	border-radius: 50%;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.headImg{
+	font-size: 14px;
+	word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 3; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+	position: absolute;
+	top: 50%;
+	margin-top: -1.875rem;
+	right: 0.875rem;
+	width: 3.75rem;
+	height: 3.75rem;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.nav{
+	position: fixed;
+	height: 2rem;
+	line-height: 2rem;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    
+}
+.active{
+	color: #7FCADF;
+	border-bottom: 4px solid #7FCADF;
+}
+.nav > div{
+	flex: 1;
+}

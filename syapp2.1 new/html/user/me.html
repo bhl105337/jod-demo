@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/user/me.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/qiniu.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div class="me_header">
+			<div class="me_info">
+				<div class="me_img  fl" id="me_img">
+					<!--<div class="tac" ></div>-->
+				</div>
+				<div class="me_desc fl ofh">
+					<div class="me_name">
+						<div class="me_username  color_white"><strong></strong></div>
+
+						<div class="color_white" style="margin-top: 0.6rem;">
+
+							<span class="onlyId"></span>
+						</div>
+						<!--<input class=" font_12 tac color_white" value="VIP0" style="height: 1rem;" disabled="disabled"></input>-->
+
+					</div><br />
+					<div class="me_headerset"></div>
+					<div class="me_share" >
+						
+					</div>
+					<!--<div class="me_money font_12 font_bold" style="margin-top: 0.4rem;">
+						<div class="fl">
+							<div class="fl color_white">平台币：</div>
+							<div class="fr me_moneynum">000</div>
+						</div>
+						<div class="fl" style="margin-left: 2rem;">
+							<div class="fl color_white">积分：</div>
+							<div class="fr me_scorenum">000</div>
+						</div>
+					</div>-->
+
+				</div>
+			</div>
+		</div>
+
+		<ul class="mui-table-view me_newscenter">
+			<li class="mui-table-view-cell ">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_news"></div>
+					消息中心
+				</a>
+			</li>
+
+		</ul>
+		<ul class="mui-table-view me_play">
+			<li class="mui-table-view-cell">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_game"></div>
+					我的游戏
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_works"></div>
+					我的作品
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_collection"></div>
+					我的收藏
+				</a>
+			</li>
+
+		</ul>
+
+		<ul class="mui-table-view me_us">
+			<li class="mui-table-view-cell">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_view"></div>
+					意见反馈
+				</a>
+			</li>
+			<li class="mui-table-view-cell">
+
+				<a class="mui-navigate-right ">
+					<div class="fl me_about"></div>
+					关于我们
+				</a>
+			</li>
+
+		</ul>
+
+		<script src="../../js/user/me.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		<script type="text/javascript">
+			
+			function openShare() {
+				
+				shareWebview();
+			}
+			mui.plusReady(function() {
+				ws = plus.webview.currentWebview();
+				//关闭splash页面；  
+				plus.navigator.closeSplashscreen();
+			})
+			var sharew;
+			var ws = null;
+			/**  
+			 *分享窗口  
+			 */
+			function shareWebview() {
+				ws = plus.webview.currentWebview();
+				if(sharew) { // 避免快速多次点击创建多个窗口  
+					return;
+				}
+				var top = plus.display.resolutionHeight - 134;
+				var href = "share.html";
+				sharew = plus.webview.create(href, "share.html", {
+					width: '100%',
+					height: '134',
+					top: top,
+					zindex: 999,
+					scrollIndicator: 'none',
+					scalable: false,
+					popGesture: 'none'
+				}, {
+					shareInfo: {
+						"href": "http://www.oneyouxi.com.cn:8000/download?data=9",
+						"title": "ONE游戏分享",
+						"content": "我正在使用ONE游戏平台，赶紧跟我一起来体验！",
+						"pageSourceId": ws.id
+					}
+				});
+				sharew.addEventListener("loaded", function() {
+					sharew.show('slide-in-bottom', 300);
+				}, false);
+				// 显示遮罩层    
+				ws.setStyle({
+					mask: "rgba(0,0,0,0.5)"
+				});
+				// 点击关闭遮罩层  
+				ws.addEventListener("maskClick", closeMask, false);
+			}
+
+			function closeMask() {
+				ws.setStyle({
+					mask: "none"
+				});
+				//避免出现特殊情况，确保分享页面在初始化时关闭   
+				if(!sharew) {
+					sharew = plus.webview.getWebviewById("share.html");
+				}
+				if(sharew) {
+					sharew.close();
+					sharew = null;
+				}
+			}
+		</script>
+	</body>
+
+</html>

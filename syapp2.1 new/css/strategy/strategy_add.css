@@ -1,0 +1,147 @@
+.header_box{
+	z-index:10;
+	
+}
+body{
+	background-color: white;
+}
+.add_comment{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+}
+.publish{
+	position: absolute;
+	right: 1rem;
+}
+.strategy_title{
+	height:2.8125rem !important;
+	line-height:2.8125rem !important;
+	color:#282828 !important;
+	padding:0 0 0 0.9375rem !important;
+    margin:0 !important;
+	border:none !important;
+	border-bottom:1px solid #E9E9E9 !important;
+	}
+	.strategy_title::-webkit-input-placeholder {
+     /* placeholder颜色  */
+        color: #e9e9e9;
+    }
+
+
+#strategy_textarea{
+	width:100%;
+	overflow-y:scroll;
+	padding:0.9375rem 0.9375rem 2rem 0.9375rem;
+	position:absolute;
+	background-color:#fff;
+	margin-bottom:5rem;
+}
+
+
+#strategy_textarea:empty:before{
+content:attr(placeholder);
+color:#e9e9e9;
+font-size:15px;
+}
+#strategy_textarea:focus:before{
+content:none;
+}
+
+
+.choose_img{
+	height: 2.60rem;
+	width: 100%;
+	border-top: 1px solid #E7EAEC;
+	border-bottom: 1px solid #E7EAEC;
+}
+.choose{
+	width: 80%;
+	height: 1.5625rem;
+	margin-left: 1.125rem;
+	background-image: url("../../Public/image/tupian.png");
+	background-position: left;
+	background-repeat:no-repeat;
+	background-size: contain;
+	margin-top: 0.5rem;
+}
+.show_imgs{
+	position:absolute;
+	bottom: 0;
+	height: 10.625rem;
+	padding-top: 1.0625rem;
+	padding-left: 1.0625rem;
+	overflow: scroll;
+	width: 100%;
+}
+.show_img{
+	display: block;
+	width: 6.25rem;
+	height: 6.25rem;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-right: 0.875rem;
+	position: relative;
+}
+.delete_img{
+	position:fixed;
+	width: 1.4rem;
+	height: 1.4rem;
+	background-image: url(../../Public/image/16FA1BF1-80EC-4EE0-878C-514B5E507970.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	right: 1rem;
+	top: 0.4rem;
+}
+.add_img{
+	width: 6.25rem;
+	height: 6.25rem;
+	/*background-image: url("../../Public/image/yishoucang.png");*/
+	background-color: peachpuff;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	margin-right: 0.875rem;
+	position: relative;
+}
+.img_num{
+	position: absolute;
+	bottom: 1rem;
+	left: 45%;
+}
+.img_box{
+	position: relative;
+	
+}
+img { 
+	object-fit: cover; 
+	border: 1px solid black;
+} 
+.choose_game{
+	display: block;
+	margin: 0 auto;
+	width:90% !important;
+	border-radius:10px;
+	border:0 !important;
+	left: 5%;
+	background:#E6EBEC;
+	font-size:13px;
+}
+
+.imgBox{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  z-index:999;
+  background:#fff;
+  padding-top:8px;
+}
+
+/*input[type=text]{
+	border: 0;
+	margin-bottom: 5px;
+	width: 90%;
+}*/

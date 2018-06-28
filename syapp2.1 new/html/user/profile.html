@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/user/profile.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/iscroll-zoom-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/lrz.all.bundle.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/PhotoClip.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/qiniu.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+
+				</div>
+				<div class="add_comment">个人资料</div>
+				<div class="publish font_14">保存</div>
+
+			</header>
+		</div>
+		<div class="profile_contents">
+			<div class="profile_header" id="profile_header">
+
+			</div>
+
+			<ul class="fl key">
+				<li>ID</li>
+				<li>昵称</li>
+				<li>性别</li>
+				<li>生日</li>
+			</ul>
+			<ul class="mui-table-view " id="profile_ul">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<input type="" name="" id="" class="personal_id" disabled="disabled"/>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<input type="" name="" id="" value="" class="personal_name" maxlength="10"/>
+					</a>
+				</li>
+				<li class="mui-table-view-cell sex">
+					<a class="mui-navigate-right sexArt"></a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						<input type="date" name="" id="" class="personal_bir"/>
+					</a>
+				</li>
+			</ul>
+
+			<!--弹出框-->
+			<div id="popover" class="mui-popover">
+				<ul class="mui-table-view mui-table-view-radio">
+					<li class="mui-table-view-cell mui-selected">
+						<a class="mui-navigate-right">男</a>
+					</li>
+					<li class="mui-table-view-cell ">
+						<a class="mui-navigate-right">女</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right">保密</a>
+					</li>
+				</ul>
+			</div>
+			<!--弹出框结束-->
+		</div>
+
+		<!--头像裁剪div-->
+		<div class="head_cuts hidden">
+			<div id="clipArea">
+
+			</div>
+			<div class="cuts_options font_bold">
+				<div class="fl cancel_button">取消</div>
+				<input type="file" id="file" class="hidden"/>
+
+				<div class="fr" id="clipBtn">完成</div>
+			</div>
+		</div>
+
+		<!--头像裁剪结束<-->
+		
+		<script>
+			mui.init({
+				swipeBack: true
+			});
+		
+			mui.plusReady(function(){  
+//              var self=plus.webview.currentWebview();  
+//              console.log(JSON.stringify(self))  
+                var old_back = mui.back;  
+                mui.back = function() {  
+                    var wobj = plus.webview.getWebviewById("html/user/me.html");//注意 HBuilder 是   1.html 的 ID  你如果1.html 有ID   要替换掉HBuilder，  
+                    wobj.reload(true);  
+                    old_back()  
+                }     
+            });  
+		</script>
+		<script src="../../js/user/profile.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../css/game/game_detail.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	
+		<style type="text/css">
+			.mui-preview-image.mui-fullscreen {
+				position: fixed;
+				z-index: 102;
+				background-color: #000;
+			}
+			.mui-preview-header,
+			.mui-preview-footer {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				z-index: 101;
+			}
+			.mui-preview-header {
+				height: 44px;
+				top: 0;
+			}
+			.mui-preview-footer {
+				height: 50px;
+				bottom: 0px;
+			}
+			.mui-preview-header .mui-preview-indicator {
+				display: block;
+				line-height: 25px;
+				color: #fff;
+				text-align: center;
+				margin: 15px auto 4;
+				width: 70px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border-radius: 12px;
+				font-size: 16px;
+			}
+			.mui-preview-image {
+				display: none;
+				-webkit-animation-duration: 0.5s;
+				animation-duration: 0.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			.mui-preview-image.mui-preview-in {
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+			}
+			.mui-preview-image.mui-preview-out {
+				background: none;
+				-webkit-animation-name: fadeOut;
+				animation-name: fadeOut;
+			}
+			.mui-preview-image.mui-preview-out .mui-preview-header,
+			.mui-preview-image.mui-preview-out .mui-preview-footer {
+				display: none;
+			}
+			.mui-zoom-scroller {
+				position: absolute;
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+				-webkit-box-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			.mui-zoom {
+				-webkit-transform-style: preserve-3d;
+				transform-style: preserve-3d;
+			}
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
+				object-fit: cover;
+			}
+			.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+				width: 100%;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+				display: inline-table;
+			}
+			.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.mui-preview-loading {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			.mui-preview-loading.mui-active {
+				display: block;
+			}
+			.mui-preview-loading .mui-spinner-white {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+				height: 50px;
+				width: 50px;
+			}
+			.mui-preview-image img.mui-transitioning {
+				-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+				transition: transform 0.5s ease, opacity 0.5s ease;
+			}
+			@-webkit-keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@keyframes fadeIn {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes fadeOut {
+				0% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			p img {
+				max-width: 100%;
+				height: auto;
+			}
+			.mui-slider-img-content {
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				right: 10px;
+				color: white;
+				text-align: center;
+				line-height: 21px
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--重写back-->
+		<div class="backImg"></div>
+
+		<!------->
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<!--<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+	
+				</div>-->
+				<div class="game_nameHeader overflow">游戏名称</div>
+				<div class="download font_12 hidden">下载</div>
+				<div class="border hidden"></div>
+
+			</header>
+		</div>
+		<div class="game_detailContent " id="game_detailContent">
+
+			<div class="game_detailTop ofh">
+				<div class="game_detailTopimg"></div>
+				<div class="game_detailTopinfo backgroundColor_white">
+					<div class="game_infoImg fl"></div>
+					<div class="game_infoArt fl">
+						<div class="simHei color_282828 game_call overflow">游戏名称</div>
+						<div class="font_12 simHei color_9e9e9e game_company">游戏厂商</div>
+						<div class="simHei color_7a7a7a font_14 game_signs">
+							<!--<span>标签 |</span>
+						<span>标签 |</span>
+						<span>标签</span>-->
+
+						</div>
+					</div>
+					<div class="fr game_infoScores">
+						<div class="ofh">
+							<div class="green_star fl"></div>
+							<div class="fl game_infoScore"></div>
+						</div>
+						<!--<div class="download_button color_white tac backgroundColor_green font_12 fr">下载</div>-->
+						<div style="">
+			    			<div class="download_btn download_button color_white tac  font_12 fr" id="game_detail_download">
+									<div class="download_loading" id="loading"></div>
+									<div class="download_btn_text " >下载</div>
+							</div>	
+		    			</div>
+					</div>
+				</div>
+			</div>
+			<div id="game_detail_navBox">
+				<div class="game_detail_nav ui_flex_wrapper ui_flex_h tac backgroundColor_white ofh">
+					<div class="ui_flex_wide game_detail_detail game_detail_detail_active">详情</div>
+					<div class="ui_flex_wide game_detail_assess color_c9c9">评价</div>
+					<div class="ui_flex_wide game_detail_strategy color_c9c9">攻略</div>
+				</div>
+			</div>
+			<div class="game_detail_navContents">
+				<!--单页面的父盒子0-->
+				<div class="game_detail_details ">
+
+					<!--游戏详情的详情页面-->
+					<div class="game_detail_contents ui_flex_wrapper ui_flex_h mui-content-padded">
+						
+						<!--<div style="margin:0.625rem 0.625rem;margin-left: 0;margin-top: 0.125rem;">
+							<div class="game_detail_content"></div>
+						</div>
+						
+						<div style="margin:0.625rem 0.625rem;margin-left: 0;margin-top: 0.125rem;">
+							<div class="game_detail_content"></div>
+						</div>
+						<div style="margin:0.625rem 0.625rem;margin-left: 0;margin-top: 0.125rem;">
+							<div class="game_detail_content"></div>
+						</div>
+						<div style="margin:0.625rem 0.625rem;margin-left: 0;margin-top: 0.125rem;">
+							<div class="game_detail_content"></div>
+						</div>-->
+
+					</div>
+
+					<div class="game_introduce backgroundColor_white">
+						<span class="game_simpleIntro  simHei color_282828">游戏简介</span>
+						<div class="game_simpleIntro_content font_14 simHei color_7a7a7a"></div>
+						<div class="color_green font_12 tac simHei show_all" style="margin-bottom: 0.625rem;">显示全部</div>
+					</div>
+
+					<div class="game_particular ofh backgroundColor_white ofh">
+						<div class="game_simpleIntro  simHei color_282828 ">详细信息</div>
+						<div>
+							<div class="game_particular_key fl ofh">
+								<div>下载量</div>
+								<div>当前版本</div>
+								<div>大小</div>
+								<div>更新日期</div>
+								<div>发行商</div>
+								<div>开发商</div>
+							</div>
+						</div>
+						<div class="game_particular_value fl">
+							<div>1625421次下载</div>
+							<div>1.1.1</div>
+							<div>50MB</div>
+							<div>2018-12-11</div>
+							<div>发行商</div>
+							<div>开发商</div>
+						</div>
+					</div>
+
+					<div class="game_relatedInfo backgroundColor_white">
+						<span class="game_simpleIntro  simHei color_282828 ofh">相关资讯</span>
+						<div class="game_relatedInfocontents ui_flex_wrapper ui_flex_h">
+							<!--<div class="game_relatedInfocontent">
+								<div class="game_relatedInfocontentImg"></div>
+								<div class="game_relatedInfocontentArt font_14 simHei color_282828">文章标题kkk</div>
+								<div class="game_relatedInfocontentTime font_12 simHei color_9e9e9e">8小时前</div>
+							</div>
+							<div class="game_relatedInfocontent">
+								<div class="game_relatedInfocontentImg"></div>
+								<div class="game_relatedInfocontentArt font_14 simHei color_282828">文章标题kkk</div>
+								<div class="game_relatedInfocontentTime font_12 simHei color_9e9e9e">8小时前</div>
+							</div>
+							<div class="game_relatedInfocontent">
+								<div class="game_relatedInfocontentImg"></div>
+								<div class="game_relatedInfocontentArt font_14 simHei color_282828">文章标题kkk</div>
+								<div class="game_relatedInfocontentTime font_12 simHei color_9e9e9e">8小时前</div>
+							</div>-->
+						</div>
+					</div>
+
+					<div class="line_cut"></div>
+				
+					<div class="game_comments simHei">
+						<span class="game_simpleIntro  simHei color_282828 ofh" style="margin-bottom: 0.4rem;">评论</span>
+						<div class="news_post_commentContentshot ofh backgroundColor_white">
+							<!--<div class="news_post_commentContent ofh">
+
+							<div class="ofh">
+								<div class="news_post_commentContent_head fl"></div>
+								<div class="comment_user font_12 font_bold fl">用户名123</div>
+
+							</div>
+							<div class="game_comment_content">
+								<div class="comment_content font_14">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+								<div class="comment_info ofh">
+									<div class="font_12 color_9e9e9e fl">3小时前</div>
+									<div class="fr color_9e9e9e comment_imgs">
+										<span class="thumb"></span>
+										<span class="thumb_num font_14">5</span>
+										<span class="comment_img"></span>
+										<span class="comment_num font_14">3</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="news_post_commentContent ofh">
+
+							<div class="ofh">
+								<div class="news_post_commentContent_head fl"></div>
+								<div class="comment_user font_12 font_bold fl">用户名123</div>
+
+							</div>
+							<div class="game_comment_content">
+								<div class="comment_content font_14">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+								<div class="comment_info ofh">
+									<div class="font_12 color_9e9e9e fl">3小时前</div>
+									<div class="fr color_9e9e9e comment_imgs">
+										<span class="thumb"></span>
+										<span class="thumb_num font_14">5</span>
+										<span class="comment_img"></span>
+										<span class="comment_num font_14">3</span>
+									</div>
+								</div>
+							</div>
+
+						</div>-->
+						</div>
+					</div>
+					
+					<div class="line_cut"></div>
+					
+					<div class="game_similar simHei">
+						<span class="game_simpleIntro  simHei color_282828 ofh" style="margin-bottom: 0.4rem;">相似游戏</span>
+						<div class="game_similarContents  ui_flex_wrapper ui_flex_h">
+							<!--<div class="game_similarContent backgroundColor_white">
+								<div class="game_similarContentimg"></div>
+								<div class="game_similarContentname font_12 font_bold color_282828">游戏名字</div>
+								<div class="game_similarContentinfo ofh">
+									<div class="font_12 color_7a7a7a fl" style="margin-left: 0.4375rem;">标签</div>
+									<div class="fr font_12 color_7a7a7a" style="margin-right: 0.5rem;">9.1分</div>
+									<div class="game_star fr"></div>
+								</div>
+							</div>
+							<div class="game_similarContent backgroundColor_white">
+								<div class="game_similarContentimg"></div>
+								<div class="game_similarContentname font_12 font_bold color_282828">游戏名字</div>
+								<div class="game_similarContentinfo ofh">
+									<div class="font_12 color_7a7a7a fl" style="margin-left: 0.4375rem;">标签</div>
+									<div class="fr font_12 color_7a7a7a" style="margin-right: 0.5rem;">9.1分</div>
+									<div class="game_star fr"></div>
+								</div>
+							</div>-->
+							<!--<div class="game_similarContent backgroundColor_white">
+								<div class="game_similarContentimg"></div>
+								<div class="game_similarContentname font_12 font_bold color_282828">游戏名字</div>
+								<div class="game_similarContentinfo ofh">
+									<div class="font_12 color_7a7a7a fl" style="margin-left: 0.4375rem;">标签</div>
+									<div class="fr font_12 color_7a7a7a" style="margin-right: 0.5rem;">9.1分</div>
+									<div class="game_star fr"></div>
+								</div>
+							</div>
+							<div class="game_similarContent backgroundColor_white">
+								<div class="game_similarContentimg"></div>
+								<div class="game_similarContentname font_12 font_bold color_282828">游戏名字</div>
+								<div class="game_similarContentinfo ofh">
+									<div class="font_12 color_7a7a7a fl" style="margin-left: 0.4375rem;">标签</div>
+									<div class="fr font_12 color_7a7a7a" style="margin-right: 0.5rem;">9.1分</div>
+									<div class="game_star fr"></div>
+								</div>
+							</div>
+							<div class="game_similarContent backgroundColor_white">
+								<div class="game_similarContentimg"></div>
+								<div class="game_similarContentname font_12 font_bold color_282828">游戏名字</div>
+								<div class="game_similarContentinfo ofh">
+									<div class="font_12 color_7a7a7a fl" style="margin-left: 0.4375rem;">标签</div>
+									<div class="fr font_12 color_7a7a7a" style="margin-right: 0.5rem;">9.1分</div>
+									<div class="game_star fr"></div>
+								</div>
+							</div>-->
+						</div>
+					</div>
+					<!--游戏详情页面结束-->
+
+				</div>
+
+				<!--单页面父盒子0结束-->
+
+				<!--单页面父盒子1-->
+				<div class="game_detail_comments backgroundColor_white hidden">
+					<!--游戏的评分页面-->
+					<div class="game_detail_score backgroundColor_white">
+						<div class="game_scores">
+							<div class="fl">
+								<div class="font_14 simHei">游戏评分</div>
+								<div style="margin-top: 1.86rem;font-size: 40px;" class="color_green font_bold gameScore"></div>
+							</div>
+							<div class="fl font_12" style="margin-left: 1.6875rem;">
+								<div class="game_score">
+									<span>5</span>
+									<span class="game_score_star"></span>
+									<span class="game_score_progressBars ">
+									<span class="game_score_progressBar backgroundColor_green bar0"></span>
+									</span>
+								</div>
+								<div class="game_score">
+									<span>4</span>
+									<span class="game_score_star"></span>
+									<span class="game_score_progressBars ">
+									<span class="game_score_progressBar backgroundColor_green bar1"></span>
+									</span>
+								</div>
+								<div class="game_score">
+									<span>3</span>
+									<span class="game_score_star"></span>
+									<span class="game_score_progressBars ">
+									<span class="game_score_progressBar backgroundColor_green bar2"></span>
+									</span>
+								</div>
+								<div class="game_score">
+									<span>2</span>
+									<span class="game_score_star"></span>
+									<span class="game_score_progressBars ">
+									<span class="game_score_progressBar backgroundColor_green bar3"></span>
+									</span>
+								</div>
+								<div class="game_score">
+									<span>1</span>
+									<span class="game_score_star"></span>
+									<span class="game_score_progressBars ">
+									<span class="game_score_progressBar backgroundColor_green bar4"></span>
+									</span>
+								</div>
+							</div>
+						</div>
+						<!--清除浮动的，无意义-->
+						<div style="clear:both ;"></div>
+						<!--。。。。-->
+						<div class="goToscore font_14 backgroundColor_green color_white tac">我要评分</div>
+					</div>
+
+					<!--游戏的评论页面-->
+					<div class="news_post_comment color_282828 backgroundColor_white">
+						<!--<div class="news_post_commentHead ofh color_9e9e9e">
+
+							<span class="fr font_12" style="margin-left: 1rem;">时间</span>
+							<span class="cut_line">|</span>
+							<span class="fr font_12">热度</span>
+
+						</div>-->
+
+						<!--评论内容-->
+						<div class="game_comments simHei">
+
+							<div class="news_post_commentContents backgroundColor_white">
+								<!--<div class="news_post_commentContent">
+	
+										<div class="ofh">
+											<div class="news_post_commentContent_head fl"></div>
+											<div class="comment_user font_14 font_bold fl">用户名123</div>
+		
+										</div>
+										<div class="game_comment_content">
+											<div class="comment_content font_14 overflow_two">哈哈哈</div>
+											<div class="comment_info ofh">
+												<div class="font_12 color_9e9e9e fl">3小时前</div>
+												<div class="fr color_9e9e9e comment_imgs">
+													<span class="thumb"></span>
+													<span class="thumb_num font_14">5</span>
+													<span class="comment_img"></span>
+													<span class="comment_num font_14">3</span>
+												</div>
+											</div>
+										</div>
+	
+									</div>
+
+									<div class="news_post_commentContent">
+	
+										<div class="ofh">
+											<div class="news_post_commentContent_head fl"></div>
+											<div class="comment_user font_14 font_bold fl">用户名123</div>
+									
+										</div>
+										<div class="game_comment_content">
+											<div class="comment_content font_14 ">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+											<div class="comment_info ofh">
+												<div class="font_12 color_9e9e9e fl">3小时前</div>
+												<div class="fr color_9e9e9e comment_imgs">
+													<span class="thumb"></span>
+													<span class="thumb_num font_14">5</span>
+													<span class="comment_img"></span>
+													<span class="comment_num font_14">3</span>
+												</div>
+											</div>
+										</div>
+	
+									</div>-->
+							</div>
+						</div>
+						<!--游戏的评论页面end-->
+					</div>
+
+				</div>
+				<!--单页面父盒子1结束-->
+
+				<!--单页面父盒子2-->
+				<div class="game_detail_walkThroughs hidden">
+					<div class="game_comments simHei">
+						
+						
+						<div class="news_post_commentContentstra ofh backgroundColor_white">
+							
+							<!--<div class="news_post_commentContent ofh">
+
+								<div class="ofh">
+									<div class="news_post_commentContent_head fl"></div>
+									<div class="comment_user font_14 font_bold fl">用户名123</div>
+
+								</div>
+								<div class="game_comment_content">
+									<div class="font_bold color_282828 " style="margin-top: 0.625rem;margin-bottom: 0.5625rem;">
+										<span>标题表头多多多多多多多多多多多</span>
+										
+									</div>
+									<div class=" font_14 overflow_two color_7a7a7a simHei">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+									<div class="comment_info ofh">
+										<div class="font_12 color_9e9e9e fl">3小时前</div>
+										<div class="fr color_9e9e9e comment_imgs">
+											<span class="thumb"></span>
+											<span class="thumb_num font_14">5</span>
+											<span class="comment_img"></span>
+											<span class="comment_num font_14">3</span>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							
+							<div class="news_post_commentContent ofh">
+
+								<div class="ofh">
+									<div class="news_post_commentContent_head fl"></div>
+									<div class="comment_user font_14 font_bold fl">用户名123</div>
+
+								</div>
+								<div class="game_comment_content">
+									<div class="font_bold color_282828 " style="margin-top: 0.625rem;margin-bottom: 0.5625rem;">
+										<span>标题表头多多多多多多多多多多多</span>
+										
+									</div>
+									<div class=" font_14 overflow_two color_7a7a7a simHei">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+									<div class="comment_info ofh">
+										<div class="font_12 color_9e9e9e fl">3小时前</div>
+										<div class="fr color_9e9e9e comment_imgs">
+											<span class="thumb"></span>
+											<span class="thumb_num font_14">5</span>
+											<span class="comment_img"></span>
+											<span class="comment_num font_14">3</span>
+										</div>
+									</div>
+								</div>
+
+							</div>-->
+						</div>
+					</div>
+				</div>
+				<!--单页面父盒子2结束-->
+
+			</div>
+
+		</div>
+		
+		<script type="text/javascript">
+			var page = 1,pageIndex="detail";
+		</script>
+		<script type="text/javascript">
+			mui.init({			
+				pullRefresh: {
+					container: "#game_detailContent", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: false, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					down: {
+						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						color: '#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+						height: '50px', //可选,默认50px.下拉刷新控件的高度,
+						range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+						offset: '0px', //可选 默认0px,下拉刷新控件的起始位置
+						auto: false, //可选,默认false.首次加载自动上拉刷新一次
+						callback: down //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+				}
+
+			});
+
+			function up() {			
+				if(!commentModule) {
+					mui('#game_detailContent').pullRefresh().endPullupToRefresh(true);
+				} else {
+					page++;
+					$.ajax({
+						type: "get",
+						url: config.data + "game/getGameCommentById",
+						async: true,
+						data: {
+							gameId: gameId,
+							page: page,
+						},
+						success: function(data) {
+							if(data.state) {
+
+								var com = data.comment;
+								var div = '';
+
+								for(var i = 0; i < com.length; i++) {
+									div +=
+										"<div class='news_post_commentContent ofh'>" +
+
+										"<div class='ofh'>" +
+										"<div class='news_post_commentContent_head fl' style='background-image: url(" + encodeURI(com[i].portrait) + ");' ></div>" +
+										"<div class='comment_user font_12 font_bold fl'>" + com[i].nick_name + "</div>" +
+
+										"</div>" +
+										"<div class='game_comment_content'>" +
+										"<div class='comment_content font_14' data-id='" + com[i].id + "'>" + com[i].content + "</div>" +
+										"<div class='comment_info ofh'>" +
+										"<div class='font_12 color_9e9e9e fl'>" + com[i].add_time + "</div>" +
+										"<div class='fr color_9e9e9e comment_imgs'>" +
+										"<span class='thumb'></span>" +
+										"<span class='thumb_num font_14'>" + com[i].agree + "</span>" +
+										"<span class='comment_img' data-id='" + com[i].id + "'></span>" +
+										"<span class='comment_num font_14'>" + com[i].comment_num + "</span>" +
+										"</div>" +
+										"</div>" +
+										"</div>" +
+
+										"</div>"
+								}
+								$('.news_post_commentContents').append(div)
+								if(com.length < 10) {
+
+									mui('#game_detailContent').pullRefresh().endPullupToRefresh(true);
+
+								} else {
+
+									mui('#game_detailContent').pullRefresh().endPullupToRefresh(false);
+
+								}
+							} else {
+
+							}
+						}
+					});
+				}
+
+			}
+			function down() {
+				switch (pageIndex){
+	                case "detail":
+					break;
+					case "assess":
+					 detail_assess();
+					break;
+					case "strategy":
+					
+					 detail_strategy();
+					break;
+				}				
+				setTimeout(function() {
+					mui('#game_detailContent').pullRefresh().endPulldown(true);
+				}, 1000);
+			}
+
+          window.addEventListener('assess',function(event){        
+             detail_assess();
+          });
+		</script>
+		<script src="../../js/game/game_detail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.zoom.js"></script>
+		<script src="../../js/mui.previewimage.js"></script>
+		<script>
+			mui.previewImage();
+		</script>
+	</body>
+
+</html>

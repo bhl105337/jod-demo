@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../css/user/personal_data.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/hammer.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/iscroll-zoom-min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/lrz.all.bundle.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/PhotoClip.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/qiniu.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="personal_data">
+			<div class="color_282828 tac">完善个人信息</div>
+			<div class="me_header">
+				<div class="camera"></div>
+			</div>
+		</div>
+
+		<input type="text" name="" id="" value="" class="font_14 yourName" maxlength="10" placeholder="输入我的昵称" />
+
+		<div class="sex_imgs">
+			<div class="fl man_img " data-sex="1" data-cls="man_act"></div>
+			<div class="fr woman_img" data-sex="2" data-cls="woman_act"></div>
+		</div>
+
+		<div class="goTo backgroundColor_green color_white tac">开始ONE游戏吧</div>
+
+		<!--头像裁剪div-->
+		<div class="head_cuts hidden">
+			<div id="clipArea">
+
+			</div>
+			<div class="cuts_options font_bold">
+				<div class="fl cancel_button">取消</div>
+				<input type="file" id="file" class="hidden" />
+
+				<div class="fr" id="clipBtn">完成</div>
+			</div>
+		</div>
+
+		<!--头像裁剪结束<-->
+
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script type="text/javascript">
+			var pc = new PhotoClip('#clipArea', {
+				size: 260,
+				outputSize: 640,
+				//adaptive: ['60%', '80%'],
+				file: '#file',
+
+				ok: '#clipBtn',
+				//img: 'img/mm.jpg',
+				loadStart: function() {
+					console.log('开始读取照片');
+					$('.head_cuts').removeClass('hidden')
+				},
+				loadComplete: function() {
+					console.log('照片读取完成');
+
+				},
+				done: function(dataURL) {
+					console.log(dataURL);
+					$('.me_header').css('background-image', 'url(' + dataURL + ')')
+					$('.head_cuts').addClass('hidden')
+					$.ajax({
+						type:"post",
+						url:config.data + "users/updateHead",
+						async:true,
+						data:{
+							head:dataURL,
+							id:id
+						},
+						success:function(data){
+							if (data.state) {
+								
+							} else{
+								
+							}
+						}
+					});
+
+				},
+				fail: function(msg) {
+					alert(msg);
+				}
+			});
+		</script>
+		<script src="../../js/user/personal_data.js" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

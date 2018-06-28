@@ -1,0 +1,110 @@
+.game_nameHeader{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	font-size: 18px;
+	width: 4em;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden;  
+}
+.game_topics{
+	margin-top: 45px;
+} 
+.game_topicsHeadimg{
+	width: 100%;
+	height: 44vw;
+	/*background-image: url(../../Public/image/xing1.png);*/
+	/*background-color: red;*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.game_topicsHeadart{
+	text-indent: 2em;
+	line-height: 1.6rem;
+	padding: 1.125rem 0.8rem;
+	
+}
+.game_topicsContent{
+	margin: 0 0.4375rem;
+	margin-bottom: 0.9375rem;
+}
+.game_topicsContentimg{
+	width: 100%;
+	height: 50vw;
+	/*background-image: url(../../Public/image/xing1.png);*/
+	/*background-color: greenyellow;*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	border-radius:10px 10px 0 0;
+}
+.game_topicsContentart{
+	width: 100%;
+	height: 4.875rem;
+	border-radius: 0 0 10px 10px;
+	padding-top: 0.625rem;
+	padding-left: 0.625rem;
+}
+
+
+.game_listImg{
+	width: 2.3125rem;
+	height: 2.3125rem;
+	/*background-image: url(../../Public/image/tuijian1.png);*/
+	border-radius: 10px;
+	
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-right: 0.625rem;
+	
+}
+.game_listDownload{
+	width: 2.8125rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin-top: 0.4rem;
+	border-radius: 20px;
+	margin-right: 1.4rem;
+}
+.topic_over{
+	width: 20em;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden;  
+}
+.game_recommend_star{
+	
+	width: 0.8125rem;
+	height: 0.8125rem;
+	
+	background-image: url(../../Public/image/xing2.png);
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-top: 0.2rem;
+	
+}
+.tag{
+	height: 1.125rem;
+	line-height: 1.125rem;
+	padding: 0 0.6rem;
+	margin-right: 0.2rem;
+	
+}
+
+.game_recommend_starScore{
+	margin-left: 0.2rem;
+}
+.game_list_star_active{
+	background-image: url(../../Public/image/xing1.png);
+}
+.game_list_star_half{
+	background-image: url(../../Public/image/xing3.png);
+}

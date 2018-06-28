@@ -1,0 +1,101 @@
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	font-size: 18px;
+}
+.me_gameNav > span{
+	display: inline-block;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	width: 50%;
+	float: left;
+	background-color: #fff;
+	border-bottom: 1px solid #E6EBEC;
+}
+.me_gameNav > span:nth-child(1){
+	border-bottom: 2px solid #7fddde;
+}
+.me_li{
+	height: 5.5rem;
+	width: 100%;
+	background-color: #fff;
+}
+.me_liImg{
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 10px;
+	margin-top: 1rem;
+	margin-left: 1.375rem;
+	margin-right:0.875rem;
+	/*background-image: url("../../Public/image/yishoucang.png");*/
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+body{
+	background-color:white;
+}
+.game_nameHeader{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+	font-size: 18px;
+}
+.game_list{
+	height: 6.0625rem;
+	border-bottom: 1px solid #E7EAEC;
+}
+.game_listScore{
+	width: 1rem;
+	height: 1rem;
+	margin-top: 2.5125rem;
+	margin-left: 1rem;
+}
+.game_listImg{
+	width: 3.5625rem;
+	height: 3.5625rem;
+	/*background-image: url(../../Public/image/tuijian1.png);*/
+	border-radius: 10px;
+	
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-top: 1.25rem;
+	margin-left: 0.4rem;
+}
+.game_listDownload{
+	width: 2.8125rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin-top: 2.28125rem;
+	border-radius: 20px;
+	margin-right: 1.4rem;
+}
+.game_recommend_star{
+	
+	width: 0.8125rem;
+	height: 0.8125rem;
+	
+	background-image: url(../../Public/image/xing1.png);
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-top: 0.2rem;
+	
+}
+.tag{
+	height: 1.125rem;
+	line-height: 1.125rem;
+	padding: 0 0.6rem;
+	margin-right: 0.2rem;
+	
+}
+
+.game_recommend_starScore{
+	margin-left: 0.2rem;
+}

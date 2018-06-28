@@ -1,0 +1,393 @@
+li{
+	list-style: none;
+}
+body{
+	background-color: white;
+}
+.header_title{
+	width: 53px;
+	height: 23px;
+	background-image: url(../../Public/image/logo.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	margin-top: -11px;
+	left: 10px;
+}
+.bell,.search{
+	position: absolute;
+	top: 50%;
+	margin-top: -18px;
+	width: 35px;
+	height: 35px;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	
+}
+.bell{
+	right: 67px;
+	background-image: url(../../Public/image/xioaxi1.png);
+}
+.bell_active{
+	background-image: url(../../Public/image/xiaoxitixing.png);
+}
+.search{
+	right: 1rem;
+	background-image: url(../../Public/image/sousuo1.png);
+	
+}
+.game_nav{
+	position: fixed;
+	
+	width: 100%;
+	z-index: 99;
+}
+.game_nav > div{
+	height: 2.6875rem;
+	line-height: 2.6875rem;
+}
+.border_bottom{
+	border-bottom: 4px solid #7fcadf;
+}
+/*轮播部分*/
+.mui-slider{
+	height: 50vw;
+	
+	width: 100%;
+}
+.mui-slider-item{
+	height: 50vw;
+	
+	width: 100%;
+}
+.slider_item{
+	width: 100%;
+	height: 50vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+/*轮播部分结束*/
+
+.game_shows{
+	display: flex;
+	padding: 0.9375rem;
+	justify-content: space-between;
+}
+.game_shows > div{
+	width: 6.0625rem;
+	height: 8.875rem;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+}
+.game_recommend_topicImg{
+	width: 100%;
+	height: 44vw;
+	/*background-image: url(../../Public/image/timg.jpg);*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	border-radius: 10px 10px 0 0;
+}
+.game_recommend_topicArts{
+	
+	height: 2.1875rem;
+	line-height: 2.1875rem;
+	border-radius: 0 0 10px 10px;
+}
+
+.game_recommend_topicArtstitle{
+	width: 10em;
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden;  
+	margin: 0 1rem;
+}
+.game_recommend_topicArtsart{
+	
+	width: 76%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.game_signsAll{
+	border-bottom: 12px solid #e7eaec;
+}
+.game_signsAll,.game_signsAllsec{
+	
+	padding-left: 0.9375rem;
+	
+}
+
+.game_detail_contents{
+	/*height: 16.8125rem;*/
+	
+	overflow: scroll;
+	
+	/*margin-left: 0.9375rem;*/
+}
+.game_detail_content{
+	width: 9.625rem;
+	height: 14.75rem;
+	
+
+	
+}
+.game_signTop,.game_signBottom{
+	width: 9.625rem;
+	height: 7.375rem;
+	
+}
+.game_signTopimg,.game_signBottomimg{
+	width: 9.625rem;
+	height: 4.8125rem;
+	
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.game_signTopart,.game_signBottomart{
+	width: 9.625rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	
+}
+
+.game_name_star{
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	margin-top: 0.6rem;
+	margin-right: 0.2rem;
+	background-image: url(../../Public/image/xing1.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.comments{
+	position: absolute;
+	bottom: 0.4rem;
+	right: 0.2rem;
+}
+.comments > div{
+	float: left;
+}
+.comments_num{
+	width: 2rem;
+	margin-left: 0.4rem;
+}
+.comments_img{
+	width: 1rem;
+	height: 1rem;
+	margin-top: 0.1rem;
+	/*background-image: url(../../Public/image/liuyan.png);*/
+	background-color: white;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.game_rank{
+	position: fixed;
+	width: 100%;
+	height: 2.5rem;
+	z-index: 99;
+	border-top: 1px solid #E7EAEC;
+}
+.game_rank > div > div{
+	width: 5.5rem;
+	height: 1.6875rem;
+	line-height: 1.6875rem;
+	background-color: #E7EAEC;
+	border-radius: 20px;
+	margin: 0 auto;
+	margin-top: 0.34375rem;
+	
+}
+.hot_rank{
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+	height: 21.6vw;
+	background-image: url(../../Public/image/remen.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.y_list{
+	margin-top: 1.5rem;
+	margin-bottom: 0.875rem;
+}
+.y_listImg{
+	width: 4.375rem;
+	height: 4.75rem;
+	margin-left: 1.875rem;
+	
+	/*background-image: url(../../Public/image/haowan1.png);*/
+	/*background-color: red;*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+}
+.y_listName{
+	margin: 0 auto;
+	margin-top: 0.8rem;
+	/*margin-left: 2.2rem;*/
+	width: 6rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.game_recommend_star{
+	
+	width: 0.8125rem;
+	height: 0.8125rem;
+	
+	background-image: url(../../Public/image/xing2.png);
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-top: 0.2rem;
+	
+}
+.game_recommend_starScore{
+	margin-left: 0.2rem;
+}
+.y_listDownload{
+	width: 2.8125rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin: 0 auto;
+	margin-top: 0.8rem;
+	border-radius: 20px;
+}
+.first,.second,.third{
+	position: relative;
+}
+.first_score,.second_score,.third_score{
+	position: absolute;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	top: 0.8rem;
+}
+.first_score{
+	width: 3rem;
+	height: 3rem;
+	background-image: url(../../Public/image/range1.png);
+	
+	left: 0.35rem;
+}
+.second_score,.third_score{
+	width: 2.375rem;
+	height: 2.375rem;
+	background-image: url(../../Public/image/range2.png);
+	
+	left: 0.6875rem;
+}
+.third_score{
+	background-image: url(../../Public/image/range3.png);
+}
+.game_list{
+	height: 6.0625rem;
+	border-top: 1px solid #E7EAEC;
+}
+.game_listScore{
+	width: 1rem;
+	height: 1rem;
+	margin-top: 2.5125rem;
+	margin-left: 1rem;
+}
+.game_listImg{
+	width: 3.5625rem;
+	height: 3.5625rem;
+	/*background-image: url(../../Public/image/tuijian1.png);*/
+	border-radius: 10px;
+	/*background-color: deepskyblue;*/
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin-top: 1.25rem;
+	margin-left: 1.5rem;
+}
+.game_listDownload{
+	width: 2.8125rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	margin-top: 2.28125rem;
+	border-radius: 20px;
+	margin-right: 1.4rem;
+}
+.tag{
+	height: 1.125rem;
+	line-height: 1.125rem;
+	padding: 0 0.6rem;
+	margin-right: 0.2rem;
+	
+}
+.game_classify{
+	padding-bottom: 1rem;
+}
+.game_classify_classify{
+	height: 2.5rem;
+	padding-left: 0.9375rem;
+	line-height: 2.5rem;
+	border-top: 1px solid #E7EAEC;
+	border-bottom: 1px solid #E7EAEC;
+}
+.game_classify_name,.apply_classify_name{
+	height: 2.4375rem;
+	margin-left: 1.4375rem;
+	margin-top: 1.125rem;
+	width: 40%;
+}
+.game_classify_nameImg{
+	width: 2.4375rem;
+	height: 2.4375rem;
+	/*background-image: url(../../Public/image/xing1.png);*/
+	/*background-color: red;*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+}
+.game_classify_nameArt{
+	margin-top: 0.7rem;
+	margin-left: 0.625rem;
+}
+.split_line{
+	height: 1rem;
+	background: #E7EAEC;
+	margin-top: 1.125rem;
+}
+.game_list_star_active{
+	background-image: url(../../Public/image/xing1.png);
+}
+.game_list_star_half{
+	background-image: url(../../Public/image/xing3.png);
+}
+.remommend_imgFirst,.remommend_imgSecond{
+	
+	height: 50vw;
+	margin: 0 auto;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+}

@@ -1,0 +1,209 @@
+body{
+	background-color: white;
+}
+.header_title{
+	position: absolute;
+	top: 50%;
+	margin-top: -1.4rem;
+	left: 50%;
+	margin-left: -2em;
+	
+}
+.bell,.search{
+	position: absolute;
+	top: 5px;
+	width: 35px;
+	height: 35px;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	
+}
+.bell{
+	right: 67px;
+	background-image: url(../../Public/image/xioaxi1.png);
+}
+.search{
+	right: 1rem;
+	background-image:url(../../Public/image/sousuo1.png);
+	
+}
+.strategy_head{
+	height: 5.1875rem;
+	margin-top: 45px;
+	padding-top: 0.4375rem;
+	margin-left: 0.625rem;
+}
+.strategy_head > ul > li{
+	
+	margin-right: 1.5rem;
+}
+.strategy_headImg{
+	width: 3rem;
+	height: 3rem;
+	background-color: red;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	
+}
+.strategy_nav{
+	border-top: 1px solid #E7EAEC;
+	border-bottom: 1px solid #E7EAEC;
+	width: 100%;
+}
+.strategy_content_head{
+	margin: 0.5rem 0.9375rem;
+	height: 2.9375rem;
+}
+.strategy_content_headImg{
+	width: 2.0625rem;
+	height: 2.0625rem;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	margin-top: 0.4375rem;
+}
+.icon_read{
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.75rem;
+	/*background-color: green;*/
+	background-image: url(../../Public/image/39D9371F-FB20-48E6-8801-EEBF4765BF46.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	
+}
+.strategy_content_img{
+	height: 11rem;
+	width: 22rem;
+	margin: 0 auto;
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.strategy_content_titles{
+	margin: 1.0625rem auto;
+	padding: 0 0.9375rem;
+}
+.strategy_content_sign{
+	display: inline-block;
+	width: 2.2rem;
+	height: 1rem;
+	line-height: 1rem;
+	margin-top: 0.1rem;
+}
+.strategy_content_art{
+	padding: 0 0.9375rem;
+	margin-bottom: 0.9375rem;
+	word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 4; /** 显示的行数 **/
+    overflow: hidden;  /** 隐藏超出的内容 **/
+}
+.strategy_content_art img{
+	width: 100%;
+}
+.strategy_content_classify{
+	/*width: 4rem;*/
+	max-width: 8rem;
+	padding: 0 0.4rem;
+	height: 1.25rem;
+	line-height: 1.25rem;
+	margin-left: 0.9375rem;
+}
+.comment_imgs{
+	    
+	   height: 2rem;
+	   margin-right: 0.9375rem;
+	  
+}
+.comment_img{
+	
+	width: 1.0625rem;
+	height: 1.0625rem;
+	background-image: url("../../Public/image/liuyan.png");
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	vertical-align: middle;
+}
+
+
+.thumb_num,.comment_num{
+	
+	width: 1.8rem;
+	
+	
+}
+.comment_imgs > span{
+	display: inline-block;
+	margin-left: 0.1rem;
+}
+.thumb{
+	
+	width: 1.0625rem;
+	height: 1.0625rem;
+	background-image: url("../../Public/image/good.png");
+	
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	vertical-align: middle
+}
+.cut_line{
+	width: 100%;
+	height: 0.75rem;
+	
+}
+.pen{
+	width: 3.375rem;
+	height: 3.375rem;
+	/*background-color: deepskyblue;*/
+	background-image: url(../../Public/image/fatie.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+	border-radius: 50%;
+	position: fixed;
+	top: 30rem;
+	right: 0.9375rem;
+}
+.strategy_headImgart{
+	width:4em;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow: hidden;
+}
+.border_bottom{
+	border-bottom: 1px solid #7fcadf;
+}
+.no_content{
+	height: 21.5625rem;
+	width: 100%;
+	position: relative;
+}
+.no_contentImg{
+	width: 8rem;
+	height: 8rem;
+	position: absolute;
+	top: 50%;
+	margin-top: -4rem;
+	left: 50%;
+	margin-left: -4rem;
+	background-color: red;
+	/*background-image: url("../../Public/image/share.png");*/
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}

@@ -1,0 +1,55 @@
+body{
+	background-color: #fff;
+}
+.back{
+	width: 1.4375rem;
+	height: 1.4375rem;
+	background-image: url(../../Public/image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	
+	left: 0.75rem;
+	
+}
+.login_header{
+	width: 9.875rem;
+	height: 6.4375rem;
+	margin: 0 auto;
+	margin-top: 3.625rem;
+	margin-bottom: 1.125rem;
+	background-image:url(../../Public/image/logo2.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}
+.mui-input-row,.mui-input-row:last-child{
+	margin: 0 1.375rem;
+	margin-bottom: 0.875rem;
+	background-color: #E7EAEC;
+	border-radius: 10px;
+}
+.mui-input-group:after,.mui-input-group:before{
+	height: 0;
+}
+.mui-input-group .mui-input-row:after{
+	height: 0;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea{
+	height: 2.8125rem;
+	line-height: 2.8125rem;
+	padding-left: 0.875rem;
+	font-size: 14px;
+	color: #9E9E9E;
+}
+.login_login{
+	margin: 0 1.375rem;
+	height: 2.8125rem;
+	line-height: 2.8125rem;
+	border-radius: 10px;
+}
+.login_art{
+	margin: 0 1.375rem;
+	margin-top: 1.125rem;
+}

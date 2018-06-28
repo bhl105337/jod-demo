@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+
+		<link rel="stylesheet" type="text/css" href="../../css/user/set_list.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+	
+				</div>
+				<div class="notice">设置</div>
+			</header>
+		</div>
+		<div class="set_lists">
+			<ul>
+				<li>
+					<div class="fl">个人资料</div>
+					<div class="fr mui-icon mui-icon-arrowright"></div>
+				</li>
+				<li>
+					<div class="fl">视频页在wifi下自动播放</div>
+					<div class="fr">
+						<div class="mui-switch mui-switch-mini" style="margin-top: 0.2875rem;" id="mySwitch">
+  							<div class="mui-switch-handle"></div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="fl">清除缓存</div>
+					<div class="fr cache"></div>
+				</li>
+				
+				<li style="margin-top: 1.25rem;">
+					<div>退出当前账号</div>
+				</li>
+			</ul>
+			
+		</div>
+		
+		<script src="../../js/user/set_list.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		 	mui.init({
+    			swipeBack:true   
+    		});  
+		</script>
+	</body>
+</html>

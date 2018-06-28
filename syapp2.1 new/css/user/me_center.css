@@ -1,0 +1,27 @@
+
+.notice_lists{
+	margin-top: 45px;
+}
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -1rem;
+	font-size: 18px;
+}
+.notice_list{
+	padding: 0.625rem;
+	height: 5rem;
+	background-color: white;
+	border-bottom: 4px solid #E7EAEC;
+}
+.notice_listImg{
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+/*	background-image: url("../../Public/image/star.png");*/
+	background-color: green;
+	border-radius: 50%;
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: contain;
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/strategy/strategy_details.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body class="backgroundColor_white">
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+	
+				</div>
+				<div class="notice">攻略</div>
+				<div class="share hidden"></div>
+			</header>
+		</div>
+		<div class="strategy_details">
+			<div class="news_post_content backgroundColor_white">
+				<h4 class="color_282828"></h4>
+				<div class="news_userInfo">
+					<div class="news_userInfo_img fl"></div>
+					<div class="news_userInfo_name font_14"></div>
+					<div class=" news_userInfo_date color_9e9e9e font_12"></div>
+				</div>
+				<div class="news_post_contents" style="word-wrap: break-word;">
+					<div class="news_post_content_detail"></div>
+					<div class="news_post_content_imgs">
+						
+					</div>
+				</div>
+			</div>
+			
+			<!--评论部分-->
+			<div class="news_post_comment color_282828" id="recommend">
+				<div class="news_post_commentHead ofh">
+					<span class="font_14 ">评论</span>
+					
+					<span class="fr font_12 hot">只看楼主</span>
+					<div class="cut_line">|</div>
+					
+					<span class="fr font_12 time color_green">时间</span>
+	
+				</div>
+	
+				<!--评论内容-->
+				<div class="news_post_commentContents ofh">
+					<!--<div class="news_post_commentContent ofh">
+						<div class="news_post_commentContent_head fl"></div>
+						<div class="news_post_commentContent_content fl">
+							<div class="comment_user font_12">用户名123</div>
+							<div class="comment_content font_14">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+							<div class="comment_info ofh">
+								<div class="font_12 color_9e9e9e fl">2月28日</div>
+								<div class="fr color_9e9e9e comment_imgs">
+									<span class="thumb"></span>
+									<span class="thumb_num font_14">5</span>
+									<span class="comment_img"></span>
+									<span class="comment_num font_14">3</span>
+								</div>
+							</div>
+							<div class="comment_secondComments font_14 ofh">
+								<div class="comment_secondComment ">
+									<span class="color_green">用户名456</span>
+									<span class="color_282828">：披着一下你很开心打卡时间达到</span>
+								</div>
+	
+								<div class="comment_secondComment ">
+									<span class="color_green">用户名123</span>
+									<span>回复</span>
+									<span class="color_green">用户456</span>
+									<span class="color_282828">：披着一下你很开心打卡时间达到</span>
+								</div>
+								
+								<div class="more_secondComment color_green fr">
+									全部回复
+								</div>
+							</div>
+						</div>
+	
+					</div>
+					
+					<div class="news_post_commentContent ofh">
+						<div class="news_post_commentContent_head fl"></div>
+						<div class="news_post_commentContent_content fl">
+							<div class="comment_user font_12">用户名123</div>
+							<div class="comment_content font_14">哈哈哈哈或或或或或或或或或或或或或或或或或或或</div>
+							<div class="comment_info ofh">
+								<div class="font_12 color_9e9e9e fl">2月28日</div>
+								<div class="fr color_9e9e9e comment_imgs">
+									<span class="thumb"></span>
+									<span class="thumb_num font_14">5</span>
+									<span class="comment_img"></span>
+									<span class="comment_num font_14">3</span>
+								</div>
+							</div>
+							<div class="comment_secondComments font_14 ofh">
+								
+							</div>
+						</div>
+	
+					</div>
+				</div>-->
+			</div>
+	
+			<!--底部回帖-->
+	
+			<div class="news_userInfo_reply backgroundColor_white ">
+				<div class="news_userInfo_replyInput  font_14 tac">
+					<div class="news_userInfo_replyImg fl"></div>
+					回帖
+				</div>
+				<div class="news_review"></div>
+				<div class="news_reviewNum backgroundColor_green tac color_white">2</div>
+				<div class="news_collect"></div>
+			</div>
+			
+			<!--定位-->
+			<!--<div class="news_post_list backgroundColor_white ofh">
+				<div class="news_post_listImg fl"></div>
+				<div class="fl font_14  color_282828 news_post_listName">最终幻想15口袋版</div>
+				<div class="fr color_white news_post_download backgroundColor_green tac">下 载</div>
+			</div>-->
+			<!--定位结束-->
+		</div>
+		
+	</body>
+	<!--<script type="text/javascript">
+		var page = 0;
+		var sort = "comment_num";
+	</script>-->
+	<script src="../../js/strategy/strategy_details.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+//			mui.init({
+//				swipeBack: true,
+//				pullRefresh: {
+//					container: ".strategy_details", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+//					up: {
+//						height: 50, //可选.默认50.触发上拉加载拖动距离
+//						auto: true, //可选,默认false.自动上拉加载一次
+//						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+//						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+//						callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//					},
+//					down: {
+//						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+//						color: '#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+//						height: '50px', //可选,默认50px.下拉刷新控件的高度,
+//						range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+//						offset: '0px', //可选 默认0px,下拉刷新控件的起始位置
+//						auto: false, //可选,默认false.首次加载自动上拉刷新一次
+//						callback: down //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+//					}
+//
+//				}
+//
+//			})
+			
+//			function up(){
+//				
+//				page++;
+//				if (sort == "comment_num") {
+//					$.ajax({
+//						type:"get",
+//						url:config.data + "strategy/getStrategyCommentByPageUser",
+//						async:true,
+//						data:{
+//							page:page,
+//							userId:userId,
+//							targetId:proId,
+//							strategyId:strategyId
+//						},
+//						success:function(data){
+//							if (data.state) {
+//								
+//								var com = data.comment;
+//								var div = "";
+//								
+//								
+//								for (var i = 0; i < com.length; i++) {
+//									if (com[i].img) {
+//										var img = "img"
+//									} else{
+//										var img = "hidden"
+//									}
+//									var sec = "";
+//									if(com[i].towCommentList.length > 0){
+//										for (var j = 0; j < com[i].towCommentList.length; j++) {
+//											if (com[i].towCommentList[j].targetUserNickName) {
+//												ifHide = "ifHide"
+//											} else{
+//												ifHide = "hidden"
+//											}
+//											sec +=
+//												"<div class='comment_secondComment'>"+
+//													"<span class='color_green'>"+ com[i].towCommentList[j].selfNickName +"</span>"+
+//													"<span class='"+ ifHide +"'>回复</span>"+
+//													"<span class='color_green "+ ifHide +"'>"+ com[i].towCommentList[j].targetUserNickName +"</span>"+
+//													"<span class='color_282828'>: &nbsp; "+ com[i].towCommentList[j].content +"</span>"+
+//												"</div>"
+//										}
+//					
+//										sec += "<div class='more_secondComment color_green fr' data-id='"+ com[i].id +"'>全部回复</div>"
+//											
+//										
+//									}
+//								
+//								if (com[i].state !== 1) {
+//									var ifLike = "unLike"
+//									
+//								} else{
+//									var ifLike = "liked"
+//									
+//								}
+//								
+//								div +=
+//									"<div class='news_post_commentContent ofh' data-id='"+ com[i].id +"'>"+
+//										"<div class='news_post_commentContent_head fl' style='background-image: url("+ encodeURI(com[i].portrait) +");'></div>"+
+//										"<div class='news_post_commentContent_content fl'>"+
+//											"<div class='comment_user font_12'>"+ com[i].nick_name +"</div>"+
+//											"<div class='comment_content font_14'>"+ com[i].content +"</div>"+
+//											"<img class='"+ img +"' src='" + config.img + encodeURI(com[i].img) + "' width='100%' />"+
+//											"<div class='comment_info ofh'>"+
+//												"<div class='font_12 color_9e9e9e fl'>"+ com[i].add_time +"</div>"+
+//												"<div class='fr color_9e9e9e comment_imgs'>"+
+//													"<span class='thumb "+ ifLike +"'></span>"+
+//													"<span class='thumb_num font_14'>"+ com[i].agree_num +"</span>"+
+//													"<span class='comment_img' data-id='"+ com[i].id +"'></span>"+
+//													"<span class='comment_num font_14'>"+ com[i].comment_num +"</span>"+
+//												"</div>"+
+//											"</div>"+
+//											"<div class='comment_secondComments font_14 ofh'>"+
+//												sec +
+//											"</div>"+
+//										"</div>"+
+//					
+//									"</div>"
+//									
+//									
+//										
+//								}
+//								
+//							
+//								
+//								$('.news_post_commentContents').append(div)
+//								
+//								if (com.length < 5) {
+//									mui('.strategy_details').pullRefresh().endPullupToRefresh(true);
+//								} else{
+//									mui('.strategy_details').pullRefresh().endPullupToRefresh(false);
+//								}
+//							} else{
+//								
+//							}
+//						}
+//					});
+//				} else{
+//					$.ajax({
+//						type:"get",
+//						url:config.data + "strategy/getStrategyCommentByPage",
+//						async:true,
+//						data:{
+//							strategyId:strategyId,
+//							page:page,
+//							userId:userId,
+//							sort:sort
+//						},
+//						success:function(data){
+//							if (data.state) {
+//								
+//								var com = data.comment;
+//								var div = "";
+//								
+//								
+//								for (var i = 0; i < com.length; i++) {
+//									if (com[i].img) {
+//										var img = "img"
+//									} else{
+//										var img = "hidden"
+//									}
+//									var sec = "";
+//									if(com[i].towCommentList.length >0){
+//										for (var j = 0; j < com[i].towCommentList.length; j++) {
+//											if (com[i].towCommentList[j].targetUserNickName) {
+//												ifHide = "ifHide"
+//											} else{
+//												ifHide = "hidden"
+//											}
+//											sec +=
+//												"<div class='comment_secondComment'>"+
+//													"<span class='color_green'>"+ com[i].towCommentList[j].selfNickName +"</span>"+
+//													"<span class='"+ ifHide +"'>回复</span>"+
+//													"<span class='color_green "+ ifHide +"'>"+ com[i].towCommentList[j].targetUserNickName +"</span>"+
+//													"<span class='color_282828'>: &nbsp; "+ com[i].towCommentList[j].content +"</span>"+
+//												"</div>"
+//										}
+//					
+//										sec += "<div class='more_secondComment color_green fr' data-id='"+ com[i].id +"'>全部回复</div>"
+//											
+//										
+//									}
+//								
+//								if (com[i].state !== 1) {
+//									var ifLike = "unLike"
+//									
+//								} else{
+//									var ifLike = "liked"
+//									
+//								}
+//								
+//								div +=
+//									"<div class='news_post_commentContent ofh' data-id='"+ com[i].id +"'>"+
+//										"<div class='news_post_commentContent_head fl' style='background-image: url("+ encodeURI(com[i].portrait) +");'></div>"+
+//										"<div class='news_post_commentContent_content fl'>"+
+//											"<div class='comment_user font_12'>"+ com[i].nick_name +"</div>"+
+//											"<div class='comment_content font_14'>"+ com[i].content +"</div>"+
+//											"<img class='"+ img +"' src='" + config.img + encodeURI(com[i].img) + "' width='100%' />"+
+//											"<div class='comment_info ofh'>"+
+//												"<div class='font_12 color_9e9e9e fl'>"+ com[i].add_time +"</div>"+
+//												"<div class='fr color_9e9e9e comment_imgs'>"+
+//													"<span class='thumb "+ ifLike +"'></span>"+
+//													"<span class='thumb_num font_14'>"+ com[i].agree_num +"</span>"+
+//													"<span class='comment_img' data-id='"+ com[i].id +"'></span>"+
+//													"<span class='comment_num font_14'>"+ com[i].comment_num +"</span>"+
+//												"</div>"+
+//											"</div>"+
+//											"<div class='comment_secondComments font_14 ofh'>"+
+//												sec +
+//											"</div>"+
+//										"</div>"+
+//					
+//									"</div>"
+//									
+//									
+//										
+//								}
+//								
+//							
+//								
+//								$('.news_post_commentContents').append(div)
+//								
+//								if (com.length < 5) {
+//									mui('.strategy_details').pullRefresh().endPullupToRefresh(true);
+//								} else{
+//									mui('.strategy_details').pullRefresh().endPullupToRefresh(false);
+//								}
+//							} else{
+//								
+//							}
+//						}
+//					});
+//				}
+//				
+//			}
+//			
+//			function down() {
+//				window.location.reload();
+//				setTimeout(function() {
+//					mui('.strategy_details').pullRefresh().endPulldown(true);
+//				}, 1000);
+//
+//				//				 mui('#news_content').pullRefresh().endPulldown(true);
+//			}
+	</script>
+
+</html>

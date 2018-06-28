@@ -1,0 +1,224 @@
+{
+	"index.html": {
+		"resources": [
+			"html/news/news.html",
+			"html/game/game_recommend.html",
+			"Public/image/tuijian2.png",
+			"Public/image/youxi1.png",
+			"Public/image/gonglue1.png",
+			"html/play/play.html",
+			"html/strategy/strategy.html"
+		],
+		"refer": [
+			"html/news/news.html",
+			"html/game/game_recommend.html",
+			"html/strategy/strategy.html",
+			"html/play/play.html",
+			"html/user/me.html"
+		]
+	},
+	"html/news/news.html": {
+		"refer": [
+			"html/news/news_search.html",
+			"html/news/news_post.html",
+			"html/game/game_detail.html",
+			"html/news/news_center.html"
+		],
+		"resources": []
+	},
+	"html/news/news_post.html": {
+		"refer": [
+			"html/news/news_allComments.html",
+			"html/game/game_detail.html",
+			"html/user/login.html",
+			"html/play/h5game.html"
+		],
+		"resources": []
+	},
+	"html/game/game_detail.html": {
+		"refer": [
+			"html/game/game_allComments.html",
+			"html/game/game_score.html",
+			"html/news/news_post.html",
+			"html/strategy/strategy_details.html",
+			"html/user/login.html"
+		],
+		"resources": []
+	},
+	"html/game/game_recommend.html": {
+		"refer": [
+			"html/game/game_topic.html",
+			"html/game/game_detail.html",
+			"html/game/game_classify_sign.html",
+			"html/news/news_center.html",
+			"html/news/news_search.html",
+			"html/game/game_classify_list.html",
+			"html/game/game_search.html"
+		],
+		"resources": [
+			"js/mui.min.js",
+			"Public/js/public.js",
+			"Public/js/jquery-3.2.1.min.js",
+			"Public/image/star.png",
+			"js/mySocket.js"
+		]
+	},
+	"html/strategy/strategy.html": {
+		"refer": [
+			"html/strategy/strategy_details.html",
+			"html/news/news_search.html",
+			"html/news/news_center.html",
+			"html/strategy/strategy_add.html",
+			"html/game/game_detail.html",
+			"html/strategy/strategy_search.html",
+			"html/strategy/strategy_search_result.html",
+			"html/user/login.html"
+		],
+		"resources": [
+			"Public/js/public.js",
+			"Public/js/jquery-3.2.1.min.js"
+		]
+	},
+	"html/strategy/strategy_details.html": {
+		"refer": [
+			"html/strategy/strategy_comment.html",
+			"html/strategy/strategy_allComments.html"
+		],
+		"resources": []
+	},
+	"html/play/play.html": {
+		"refer": [
+			"html/play/h5game.html",
+			"html/play/h5search.html"
+		],
+		"resources": []
+	},
+	"html/user/me.html": {
+		"refer": [
+			"html/user/me_game.html",
+			"html/user/me_works.html",
+			"html/user/me_center.html",
+			"html/user/me_collection.html",
+			"html/user/me_feedBack.html",
+			"html/user/about_us.html",
+			"html/user/set_list.html",
+			"html/user/login.html",
+			"html/user/profile.html",
+			"html/user/personal_data.html",
+			"html/news/news_center.html",
+			"html/user/share.html"
+		],
+		"resources": []
+	},
+	"html/user/set_list.html": {
+		"refer": [
+			"html/user/profile.html",
+			"index.html"
+		],
+		"resources": []
+	},
+	"html/user/login.html": {
+		"refer": [
+			"html/user/register.html",
+			"index.html",
+			"html/user/find_password.html"
+		],
+		"resources": []
+	},
+	"html/user/personal_data.html": {
+		"refer": [
+			"index.html"
+		],
+		"resources": []
+	},
+	"html/user/register.html": {
+		"refer": [
+			"html/user/personal_data.html"
+		],
+		"resources": []
+	},
+	"html/user/profile.html": {
+		"refer": [
+			"html/user/me.html"
+		],
+		"resources": []
+	},
+	"html/news/news_search.html": {
+		"refer": [
+			"html/news/news_post.html"
+		],
+		"resources": []
+	},
+	"html/strategy/strategy_search.html": {
+		"refer": [
+			"html/strategy/strategy_search_result.html"
+		],
+		"resources": []
+	},
+	"html/game/game_search.html": {
+		"refer": [
+			"html/game/game_detail.html"
+		],
+		"resources": []
+	},
+	"html/user/me_game.html": {
+		"refer": [
+			"html/game/game_detail.html",
+			"html/play/h5game.html"
+		],
+		"resources": []
+	},
+	"html/user/me_collection.html": {
+		"refer": [
+			"html/news/news_post.html",
+			"html/strategy/strategy_details.html"
+		],
+		"resources": []
+	},
+	"html/game/game_topic.html": {
+		"refer": [
+			"html/game/game_detail.html"
+		],
+		"resources": []
+	},
+	"html/news/news_center.html": {
+		"refer": [
+			"html/news/news_allComments.html",
+			"html/strategy/strategy_allComments.html",
+			"html/game/game_allComments.html"
+		],
+		"resources": []
+	},
+	"html/user/me_works.html": {
+		"refer": [
+			"html/strategy/strategy_details.html"
+		],
+		"resources": []
+	},
+	"html/game/game_classify_list.html": {
+		"refer": [
+			"html/game/game_detail.html"
+		],
+		"resources": []
+	},
+	"html/play/h5search.html": {
+		"refer": [
+			"html/play/h5game.html"
+		]
+	},
+	"html/news/news_allComments.html": {
+		"refer": [
+			"html/news/news_post.html"
+		]
+	},
+	"html/game/game_allComments.html": {
+		"refer": [
+			"html/game/game_detail.html"
+		]
+	},
+	"html/game/game_classify_sign.html": {
+		"refer": [
+			"html/game/game_detail.html"
+		]
+	}
+}

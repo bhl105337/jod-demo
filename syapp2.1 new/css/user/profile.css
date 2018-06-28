@@ -1,0 +1,100 @@
+.add_comment{
+	position: absolute;
+	left: 50%;
+	margin-left: -2rem;
+}
+.publish{
+	position: absolute;
+	right: 1rem;
+	
+}
+.profile_contents{
+	padding-top: 1.8125rem;
+}
+.profile_header{
+	width: 4.5rem;
+	height: 4.5rem;
+	background-image: url(../../Public/image/morentouxiang.png);
+	background-position: center;
+	background-repeat:no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+	border-radius: 50%;
+	margin-bottom: 0.9375rem;
+}
+.mui-table-view-cell:last-child:after, .mui-table-view-cell:last-child:before{
+	height: 1px;
+}
+.mui-table-view:after,.mui-table-view:before{
+	height: 0;
+}
+
+#profile_ul > .mui-table-view-cell{
+	width: 15.1875rem;
+	float: left;
+	height: 3.375rem;
+	margin-right: 2rem;
+	margin-left: 1rem;
+}
+.mui-table-view-cell>a:not(.mui-btn){
+	margin: 4px -15px;
+	padding-left: 2rem;
+}
+.key > li{
+	height: 3.375rem;
+	padding-top: 26px;
+	font-size: 14px;
+	margin-left: 2.3125rem;
+	color: #9E9E9E;
+}
+#profile_ul > li:first-child > .mui-navigate-right:after{
+	content: '';
+}
+#profile_ul > li:nth-child(2)> .mui-navigate-right:after{
+	content: '';
+}
+.mui-navigate-right > input{
+	border: 0;
+	background-color: #E7EAEC;
+	
+}
+#popover{
+	left: 50%;
+	margin-left: -140px;
+}
+input[type=date]{
+	padding: 0;
+	margin: 0;
+	/*padding-bottom: 2rem;*/
+	height: auto;
+}
+#file{
+	width: 5rem;
+	height: 2rem;
+	border: 0;
+	
+}
+
+.head_cuts{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #666;
+	z-index: 999;
+}
+.cuts_options{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin: 0 auto;
+	height: 50px;
+	line-height: 50px;
+	color: white;
+	padding: 0 2rem;
+	background-color: black;
+}
+#clipArea{
+	height: calc(100% - 50px);
+}

@@ -1,0 +1,14 @@
+.notice{
+	position: absolute;
+	left: 50%;
+	margin-left: -1rem;
+	font-size: 18px;
+}
+.set_lists > ul >li{
+	background-color: #fff;
+	height: 2.45rem;
+	line-height: 2.45rem;
+	border-bottom: 1px solid #E7EAEC;
+	padding: 0 1.25rem;
+	
+}

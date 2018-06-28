@@ -1,0 +1,76 @@
+
+.color_gray{
+	color: #9C9C9C;
+}
+.back{
+	width: 1.4375rem;
+	height: 1.4375rem;
+	background-image: url(../../Public/image/back.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: absolute;
+	
+	left: 0.75rem;
+	
+}
+.about_us_header{
+	/*width: 5.875rem;*/
+	width: 100vw;
+	height: 5.875rem;
+	margin-top: 4.5rem;
+	
+	/*margin-left: 8.75rem;*/
+}
+#icon{
+	width: 5rem;
+	height: 5rem;
+	left: 50%;
+	margin-left: -2.5rem;
+	position: absolute;
+	background: url(../../Public/image/oneicon.png) center no-repeat;
+	background-size: contain;
+}
+.about_name{
+	font-size: 18px;
+	margin-top: 0.4rem;
+}
+.about_us_input{
+	height: 2.625rem;
+	line-height: 2.625rem;
+	font-size: 14px;
+	margin: 5rem 0.875rem;
+	background-color: rgb(220,220,220);
+	border-radius: 20px;
+	margin-bottom: 0;
+}
+.icon{
+	width: 1.875rem;
+	height: 1.875rem;
+	float: left;
+	background: url(../../Public/image/e.png) center no-repeat;
+	background-size: contain;
+	margin-top: 0.375rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+.about_us_one{
+	height: 2.625rem;
+	line-height: 2.625rem;
+	font-size: 14px;
+	margin: 0.875rem;
+	background-color: rgb(220,220,220);
+	border-radius: 20px;
+}
+.about_us_copy{
+	position: absolute;
+	bottom: 1.245rem;
+	left: 50%;
+	margin-left: -6.5rem;
+}
+.about_us_all{
+	position: absolute;
+	bottom: 2.6rem;
+	left: 50%;
+	margin-left: -2.875rem;
+}

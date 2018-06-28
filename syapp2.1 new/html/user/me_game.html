@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/user/me_game.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+
+				</div>
+				<div class="notice">我的游戏</div>
+
+			</header>
+		</div>
+		<div class="me_gameContents">
+			<div class="me_gameNav ofh">
+				<span class="color_green" data-class="game_lists">游戏</span>
+				<span data-class="now_game">即玩小游戏</span>
+			</div>
+			
+			<!--我的游戏模块-->
+			<ul class="game_lists ">
+				
+				<!--<li class="game_list ofh">
+					<div class="color_9e9e9e fl game_listScore">4</div>
+					<div class="game_listImg fl"></div>
+					<div class="fl" style="margin-top: 1.25rem;margin-left: 0.875rem;">
+						<div class="font_14">孤岛先锋</div>
+						<div class="font_12">
+							<div class="ofh">
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_starScore fl color_green">9.4</div>
+							</div>
+						</div>
+						<div class="font_12 color_green">
+							<div class="fl tag font_12 border_green border_radius_twenty">标签</div>
+							<div class="fl tag font_12 border_green border_radius_twenty">标签标签</div>
+							
+						</div>
+					</div>
+					
+				</li>
+				
+				<li class="game_list ofh">
+					<div class="color_9e9e9e fl game_listScore">4</div>
+					<div class="game_listImg fl"></div>
+					<div class="fl" style="margin-top: 1.25rem;margin-left: 0.875rem;">
+						<div class="font_14">孤岛先锋</div>
+						<div class="font_12">
+							<div class="ofh">
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_starScore fl color_green">9.4</div>
+							</div>
+						</div>
+						<div class="font_12 color_green">
+							<div class="fl tag font_12 border_green border_radius_twenty">标签</div>
+							<div class="fl tag font_12 border_green border_radius_twenty">标签标签</div>
+							
+						</div>
+					</div>
+					
+				</li>
+				
+				<li class="game_list ofh">
+					<div class="color_9e9e9e fl game_listScore">4</div>
+					<div class="game_listImg fl"></div>
+					<div class="fl" style="margin-top: 1.25rem;margin-left: 0.875rem;">
+						<div class="font_14">孤岛先锋</div>
+						<div class="font_12">
+							<div class="ofh">
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_star fl"></div>
+								<div class="game_recommend_starScore fl color_green">9.4</div>
+							</div>
+						</div>
+						<div class="font_12 color_green">
+							<div class="fl tag font_12 border_green border_radius_twenty">标签</div>
+							<div class="fl tag font_12 border_green border_radius_twenty">标签标签</div>
+							
+						</div>
+					</div>
+					
+				</li>-->
+			</ul>
+			
+			<!--我的游戏模块结束-->
+			
+			
+			<!--小游戏模块-->
+			<ul class="now_game hidden">
+				<!--<li class="me_li ofh">
+					<div class="fl me_liImg"></div>
+					<div class="fl">
+						<div class="font_14 color_282828 overflow" style="margin-top:1.1875rem ;width: 10rem;">孤岛先锋</div>
+						<div class="font_12 color_9e9e9e overflow_two" style="width: 10rem;">游戏的大概介绍哈哈哈哈哈哈哈或或或或或或</div>
+					</div>
+					<div class="fr color_green font_12" style="margin-top:1.1875rem ;margin-right: 1rem;">
+						<span>8000</span>
+						<span>人在玩</span>
+					</div>
+				</li>-->
+			</ul>
+			<!--小游戏模块 结束-->
+		</div>
+		<script>
+			var page = 0;
+			
+		</script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack: true,
+				pullRefresh: {
+					container: ".me_gameContents", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					up: {
+						height: 50, //可选.默认50.触发上拉加载拖动距离
+						auto: true, //可选,默认false.自动上拉加载一次
+						contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+						contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+						callback: up //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					},
+					down: {
+						style: 'circle', //必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+						color: '#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+						height: '50px', //可选,默认50px.下拉刷新控件的高度,
+						range: '100px', //可选 默认100px,控件可下拉拖拽的范围
+						offset: '0px', //可选 默认0px,下拉刷新控件的起始位置
+						auto: false, //可选,默认false.首次加载自动上拉刷新一次
+						callback: down //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+					}
+
+				}
+
+			})
+			
+			function up(){
+				page++;
+				if (game == 1) {
+					getGame()
+				} else{
+					getH5()
+				}
+				
+			}
+			
+
+			function down() {
+				window.location.reload();
+				setTimeout(function() {
+					mui('.me_gameContents').pullRefresh().endPulldown(true);
+				}, 1000);
+
+				//				 mui('#news_content').pullRefresh().endPulldown(true);
+			}
+			
+			function getGame(){
+				$.ajax({
+					type:"get",
+					url:config.data + "users/getGameByUserId",
+					async:true,
+					data:{
+						userId:userId,
+						page:page,
+						type:3
+					},
+					success:function(data){
+						var  g = data.gameList;
+						if (data.state) {
+							var list = '';
+							for (var i = 0; i < g.length; i++) {
+									if(g[i].tagList){
+										var result=g[i].tagList.split(",");
+										var tagId = g[i].tagId.split(",");
+										var signs = '';
+										for (var j = 0; j < result.length; j++) {
+											signs +=
+												"<div class='fl tag font_12 border_green border_radius_twenty' data-id='"+ tagId[j] +"'>"+ result[j] +"</div>"
+										}
+									}else{
+										var signs = '';
+									}
+									list +=
+										"<li class='game_list ofh' data-id='"+ g[i].id +"'>"+
+											"<div class='color_9e9e9e fl game_listScore'>"+ (i+1+(page-1)*20) +"</div>"+
+											"<div class='game_listImg fl' style='background-image: url("+ config.img + encodeURI(g[i].game_title_img) +");'></div>"+
+											"<div class='fl' style='margin-top: 1.25rem;margin-left: 0.875rem;'>"+
+												"<div class='font_14'>"+ g[i].game_name +"</div>"+
+												"<div class='font_12'>"+
+													"<div class='ofh game_recommend_stars'>"+
+														"<div class='game_recommend_star fl'></div>"+
+														"<div class='game_recommend_star fl'></div>"+
+														"<div class='game_recommend_star fl'></div>"+
+														"<div class='game_recommend_star fl'></div>"+
+														"<div class='game_recommend_star fl'></div>"+
+														"<div class='game_recommend_starScore fl color_green'>"+ g[i].grade +"</div>"+
+													"</div>"+
+												"</div>"+
+												"<div class='font_12 color_green'>"+
+													signs +
+													
+												"</div>"+
+											"</div>"+
+											"<div class='fr game_listDownload font_14 color_white backgroundColor_green tac'>下载</div>"+
+										"</li>"
+								
+							}
+							$('.game_lists').append(list)
+							$('.game_recommend_stars').each(function(){
+				
+								var score =  $(this).find('.game_recommend_starScore').eq(0).text()
+								var starNum = Math.round(score)
+								
+								
+								if (starNum % 2 == 0) {
+									
+									var starFinal = (starNum / 2 - 1 ); 
+									$(this).children('.game_recommend_star').eq(starFinal).addClass('game_list_star_active')
+									$(this).children('.game_recommend_star').eq(starFinal).prevAll('.game_recommend_star').addClass('game_list_star_active')
+								} else{
+									var starFinal = ((starNum - 1)/2)
+									$(this).children('.game_recommend_star').eq(starFinal).prevAll('.game_recommend_star').addClass('game_list_star_active')
+									$(this).children('.game_recommend_star').eq(starFinal).addClass('game_list_star_half')
+								}
+							})
+							if(g.length < 20) {
+		
+										mui('.me_gameContents').pullRefresh().endPullupToRefresh(true);
+		
+									} else {
+		
+										mui('.me_gameContents').pullRefresh().endPullupToRefresh(false);
+		
+									}
+							
+						} else{
+							
+						}
+					}
+				});
+			}
+		
+			function getH5(){
+				$.ajax({
+					type: "get",
+					url: config.data + "users/getGameByUserId",
+					async: true,
+					data: {
+						userId:userId,
+						page:page,
+						type:4
+					},
+					success: function(data) {
+						if(data.state) {
+
+							var h = data.h5List;
+
+							var div = "";
+							for(var i = 0; i < h.length; i++) {
+								div +=
+									"<li class='me_li ofh' data-id='"+ h[i].id +"' data-url='" + h[i].url + "'>"+
+										"<div class='fl me_liImg' style='background-image: url("+ config.img + encodeURI(h[i].icon) +");'></div>"+
+										"<div class='fl'>"+
+											"<div class='font_14 color_282828 overflow' style='margin-top:1.1875rem ;width: 10rem;'>"+ h[i].name +"</div>"+
+											"<div class='font_12 color_9e9e9e overflow_two' style='width: 10rem;'>"+ h[i].commend +"</div>"+
+										"</div>"+
+										
+									"</li>"
+									
+							}
+							$('.now_game').append(div)
+							
+							if(h.length < 10) {
+
+									mui('.me_gameContents').pullRefresh().endPullupToRefresh(true);
+								} else {
+									mui('.me_gameContents').pullRefresh().endPullupToRefresh(false);
+								}
+							$('.me_gameContents').on('tap','.me_li',function() {
+								//					console.log($(this).attr('data-url'))
+								//					alert("11")
+								var url = $(this).attr('data-url');
+
+								mui.openWindow({
+									url: '../play/h5game.html',
+									id: '../play/h5game.html',
+									styles: {
+										top: 0, //新页面顶部位置
+										bottom: 0 //新页面底部位置
+										//		   width:100%,//新页面宽度，默认为100%
+										//		      height:100%,//新页面高度，默认为100%
+									},
+									extras: {url:url},
+									createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+									show: {
+										autoShow: true, //页面loaded事件发生后自动显示，默认为true
+										aniShow: "slide-in-right", //页面显示动画，默认为”slide-in-right“；
+										//    duration:animationTime//页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									waiting: {
+										autoShow: true, //自动显示等待框，默认为true
+										title: '正在加载...', //等待对话框上显示的提示内容
+										options: {
+											//      width:waiting-dialog-widht,//等待框背景区域宽度，默认根据内容自动计算合适宽度
+											//      height:waiting-dialog-height,//等待框背景区域高度，默认根据内容自动计算合适高度
+											//      ......
+										}
+									}
+								})
+
+							})
+
+						} else {
+
+						}
+					}
+				});
+			}
+		</script>
+		<script src="../../js/user/me_game.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

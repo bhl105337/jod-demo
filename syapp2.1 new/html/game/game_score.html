@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../Public/css/public.css" />
+		
+		<link rel="stylesheet" type="text/css" href="../../css/game/game_score.css" />
+		<script src="../../Public/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../Public/js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header_box">
+			<div class="before_header"></div>
+			<header class="ui_flex_wrapper ui_flex_h backgroundColor_green color_white tac" id='header'>
+				<div class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">
+				</div>
+				<div class="add_comment">添加评论</div>
+				<div class="publish font_14">发表</div>
+			</header>
+		</div>
+		
+		<textarea onkeyup="this.value=this.value.replace(/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g,'')" placeholder="限200字" maxlength="200"  id="textarea"></textarea>
+		
+		<!--定位的-->
+		<div class="score_game ">
+			<div class="score_gameImg fl"></div>
+			<div class="fl font_14 color_282828 score_gameName"></div>
+			<div class="stars fl">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>	
+		<!--定位结束-->
+		<script>
+			mui.init({
+				swipeBack: true
+			});
+		
+			mui.plusReady(function(){  
+                var old_back = mui.back;  
+                mui.back = function() {  
+                var wobj = plus.webview.getWebviewById("game_detail.html");//注意 HBuilder 是   1.html 的 ID  你如果1.html 有ID   要替换掉HBuilder，  
+                 mainPage = plus.webview.currentWebview().opener();
+                mui.fire(mainPage,"assess",{});
+			
+		         old_back();  
+			 
+                }     
+            });  
+		</script>
+		<script src="../../js/game/game_score.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
